@@ -8,6 +8,7 @@ import { ScrollProgress } from "@/components/Chrome/ScrollProgress";
 import { TargetCursor } from "@/components/Chrome/TargetCursor";
 import { Pillars } from "@/components/Pillars/Pillars";
 import { Toaster } from "@/components/ui/sonner";
+import { toast } from "sonner";
 import { Innovation } from "@/components/Innovation/Innovation";
 import { Technology } from "@/components/Technology/Technology";
 import { Capabilities } from "@/components/Capabilities/Capabilities";
@@ -36,6 +37,13 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [isDemoOpen, setIsDemoOpen] = useState(false);
+
+  const openDemo = () => {
+    setIsDemoOpen(true);
+    toast("Secure channel opened", {
+      description: "Platform access request — Nexus Biotech clinical solutions team.",
+    });
+  };
 
   // Lenis smooth scroll (browser only)
   useEffect(() => {
@@ -79,17 +87,17 @@ function Index() {
 
       <ScrollProgress />
       <TargetCursor />
-      <Navbar onOpenDemo={() => setIsDemoOpen(true)} />
+      <Navbar onOpenDemo={openDemo} />
 
       <main id="main-content" className="flex-1">
-        <Hero onOpenDemo={() => setIsDemoOpen(true)} />
+        <Hero onOpenDemo={openDemo} />
         <TrustBar />
         <Innovation />
         <Pillars />
         <Technology />
         <Capabilities />
         <Statistics />
-        <CTA onOpenDemo={() => setIsDemoOpen(true)} />
+        <CTA onOpenDemo={openDemo} />
       </main>
 
       <Footer />
