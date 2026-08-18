@@ -74,10 +74,12 @@ function Index() {
         Skip to main content
       </a>
 
+      <ScrollProgress />
       <Navbar onOpenDemo={() => setIsDemoOpen(true)} />
 
       <main id="main-content" className="flex-1">
         <Hero onOpenDemo={() => setIsDemoOpen(true)} />
+        <TrustBar />
         <Innovation />
         <Technology />
         <Capabilities />
