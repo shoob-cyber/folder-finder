@@ -132,7 +132,7 @@ export const Technology: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-6 leading-tight"
+              className="font-display text-[2.1rem] sm:text-[2.75rem] lg:text-[3.4rem] font-extrabold text-white tracking-tight mb-6 leading-tight"
             >
               Built on Enterprise Foundation
             </motion.h2>

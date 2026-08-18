@@ -64,7 +64,7 @@ export const Statistics: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-6"
+            className="font-display text-[2.1rem] sm:text-[2.75rem] lg:text-[3.4rem] font-extrabold text-white tracking-tight mb-6"
           >
             Validated at Global Scale
           </motion.h2>
