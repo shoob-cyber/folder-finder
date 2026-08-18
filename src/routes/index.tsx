@@ -64,10 +64,10 @@ function Index() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0a0e27] text-white flex flex-col selection:bg-[#00d4ff] selection:text-[#0a0e27]">
+    <div className="min-h-screen bg-[#0a0c0f] text-white flex flex-col selection:bg-[#2dd4a8] selection:text-[#0a0c0f]">
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#00d4ff] text-[#0a0e27] font-bold rounded-lg shadow-lg focus:outline-none"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#2dd4a8] text-[#0a0c0f] font-bold rounded-lg shadow-lg focus:outline-none"
       >
         Skip to main content
       </a>

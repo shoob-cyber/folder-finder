@@ -41,13 +41,13 @@ export const HeroText: React.FC<HeroTextProps> = ({ onOpenDemo }) => {
         initial={{ opacity: 0, y: -15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#1a2847]/60 border border-[#00d4ff]/30 backdrop-blur-md w-fit mb-6 shadow-[0_0_15px_rgba(0,212,255,0.15)]"
+        className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#1f302a]/60 border border-[#2dd4a8]/30 backdrop-blur-md w-fit mb-6 shadow-[0_0_15px_rgba(0,212,255,0.15)]"
       >
         <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00d4ff] opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00d4ff]"></span>
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2dd4a8] opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2dd4a8]"></span>
         </span>
-        <span className="font-mono text-xs uppercase tracking-widest text-[#00d4ff] font-semibold">
+        <span className="font-mono text-xs uppercase tracking-widest text-[#2dd4a8] font-semibold">
           AI-Driven Cellular Intelligence v4.2
         </span>
       </motion.div>
@@ -70,7 +70,7 @@ export const HeroText: React.FC<HeroTextProps> = ({ onOpenDemo }) => {
             </motion.span>
           ))}
         </span>
-        <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-[#00d4ff] via-[#9d4edd] to-[#ff6b35]">
+        <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-[#2dd4a8] via-[#73ffb8] to-[#d9f99d]">
           {headlineLine2.split("").map((char, index) => (
             <motion.span
               key={`line2-${index}`}
@@ -88,7 +88,7 @@ export const HeroText: React.FC<HeroTextProps> = ({ onOpenDemo }) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className="text-base sm:text-lg lg:text-xl text-[#888899] font-normal leading-relaxed mb-8 max-w-xl"
+        className="text-base sm:text-lg lg:text-xl text-[#8a9a93] font-normal leading-relaxed mb-8 max-w-xl"
       >
         Precision medicine platform powered by AI-driven cellular analysis. Accelerate your biotech breakthroughs from early discovery to clinical validation in record time.
       </motion.p>
@@ -102,7 +102,7 @@ export const HeroText: React.FC<HeroTextProps> = ({ onOpenDemo }) => {
       >
         <a
           href="#cta"
-          className="shimmer-btn inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-sm sm:text-base text-[#0a0e27] bg-[#00d4ff] hover:bg-[#00b4d8] shadow-[0_0_25px_rgba(0,212,255,0.45)] hover:shadow-[0_0_35px_rgba(0,212,255,0.7)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white"
+          className="shimmer-btn inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-sm sm:text-base text-[#0a0c0f] bg-[#2dd4a8] hover:bg-[#1fae8b] shadow-[0_0_25px_rgba(0,212,255,0.45)] hover:shadow-[0_0_35px_rgba(0,212,255,0.7)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white"
         >
           <span>Start Building</span>
           <ArrowRight className="w-4 h-4" />
@@ -110,9 +110,9 @@ export const HeroText: React.FC<HeroTextProps> = ({ onOpenDemo }) => {
 
         <button
           onClick={onOpenDemo}
-          className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base text-white/90 bg-white/5 hover:bg-white/10 border border-white/15 hover:border-[#00d4ff]/60 hover:text-[#00d4ff] backdrop-blur-md transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#00d4ff]"
+          className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base text-white/90 bg-white/5 hover:bg-white/10 border border-white/15 hover:border-[#2dd4a8]/60 hover:text-[#2dd4a8] backdrop-blur-md transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#2dd4a8]"
         >
-          <Play className="w-4 h-4 text-[#00d4ff] fill-[#00d4ff]/20" />
+          <Play className="w-4 h-4 text-[#2dd4a8] fill-[#2dd4a8]/20" />
           <span>Interactive Demo</span>
         </button>
       </motion.div>
@@ -122,35 +122,35 @@ export const HeroText: React.FC<HeroTextProps> = ({ onOpenDemo }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.0 }}
-        className="pt-6 border-t border-[#1a2847] grid grid-cols-1 sm:grid-cols-3 gap-4"
+        className="pt-6 border-t border-[#1f302a] grid grid-cols-1 sm:grid-cols-3 gap-4"
       >
         <div className="flex items-center gap-2.5">
-          <div className="p-1.5 rounded-lg bg-[#00d4ff]/10 text-[#00d4ff]">
+          <div className="p-1.5 rounded-lg bg-[#2dd4a8]/10 text-[#2dd4a8]">
             <Zap className="w-4 h-4" />
           </div>
           <div className="flex flex-col">
             <span className="text-xs font-semibold text-white/90">&lt;0.08µm</span>
-            <span className="text-[11px] text-[#888899]">Sub-micron Imaging</span>
+            <span className="text-[11px] text-[#8a9a93]">Sub-micron Imaging</span>
           </div>
         </div>
 
         <div className="flex items-center gap-2.5">
-          <div className="p-1.5 rounded-lg bg-[#9d4edd]/10 text-[#9d4edd]">
+          <div className="p-1.5 rounded-lg bg-[#73ffb8]/10 text-[#73ffb8]">
             <Sparkles className="w-4 h-4" />
           </div>
           <div className="flex flex-col">
             <span className="text-xs font-semibold text-white/90">99.98%</span>
-            <span className="text-[11px] text-[#888899]">Model Fidelity</span>
+            <span className="text-[11px] text-[#8a9a93]">Model Fidelity</span>
           </div>
         </div>
 
         <div className="flex items-center gap-2.5">
-          <div className="p-1.5 rounded-lg bg-[#ff6b35]/10 text-[#ff6b35]">
+          <div className="p-1.5 rounded-lg bg-[#d9f99d]/10 text-[#d9f99d]">
             <ShieldCheck className="w-4 h-4" />
           </div>
           <div className="flex flex-col">
             <span className="text-xs font-semibold text-white/90">HIPAA & SOC2</span>
-            <span className="text-[11px] text-[#888899]">FDA Part 11 Ready</span>
+            <span className="text-[11px] text-[#8a9a93]">FDA Part 11 Ready</span>
           </div>
         </div>
       </motion.div>

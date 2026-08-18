@@ -11,7 +11,7 @@ const HeroVisual = lazy(() =>
 function HeroVisualFallback() {
   return (
     <div className="relative w-full h-[450px] sm:h-[550px] lg:h-[650px] flex items-center justify-center">
-      <div className="w-64 h-64 rounded-full bg-[#00d4ff]/10 blur-3xl animate-pulse" />
+      <div className="w-64 h-64 rounded-full bg-[#2dd4a8]/10 blur-3xl animate-pulse" />
     </div>
   );
 }
@@ -36,13 +36,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
     <section
       ref={containerRef}
       id="hero"
-      className="relative min-h-screen w-full bg-[#0a0e27] pt-24 pb-16 md:pt-32 md:pb-24 flex items-center overflow-hidden"
+      className="relative min-h-screen w-full bg-[#0a0c0f] pt-24 pb-16 md:pt-32 md:pb-24 flex items-center overflow-hidden"
       aria-label="Hero Section"
     >
       {/* Background Tech Grid & Atmosphere Glows */}
       <div className="absolute inset-0 tech-grid-bg opacity-40 pointer-events-none" />
-      <div className="absolute top-1/4 -left-48 w-96 h-96 bg-[#00d4ff]/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 right-0 w-[30rem] h-[30rem] bg-[#9d4edd]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/4 -left-48 w-96 h-96 bg-[#2dd4a8]/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 right-0 w-[30rem] h-[30rem] bg-[#73ffb8]/10 rounded-full blur-[140px] pointer-events-none" />
 
       <motion.div
         style={{ opacity, y }}
@@ -68,13 +68,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
 
       {/* Downward Scroll Indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none">
-        <span className="text-[11px] font-mono tracking-widest text-[#888899]/70 uppercase">Explore Platform</span>
+        <span className="text-[11px] font-mono tracking-widest text-[#8a9a93]/70 uppercase">Explore Platform</span>
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
           className="w-4 h-7 rounded-full border border-white/20 flex justify-center pt-1"
         >
-          <div className="w-1 h-1.5 rounded-full bg-[#00d4ff]" />
+          <div className="w-1 h-1.5 rounded-full bg-[#2dd4a8]" />
         </motion.div>
       </div>
     </section>
