@@ -56,7 +56,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
 
           {/* Right Column (40% on desktop = 5 cols) */}
           <div className="lg:col-span-5 flex items-center justify-center">
-            <HeroVisual />
+            <ClientOnly fallback={<HeroVisualFallback />}>
+              <Suspense fallback={<HeroVisualFallback />}>
+                <HeroVisual />
+              </Suspense>
+            </ClientOnly>
+
           </div>
         </div>
       </motion.div>
