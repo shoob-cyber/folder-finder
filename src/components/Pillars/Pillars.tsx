@@ -125,7 +125,7 @@ export const Pillars: React.FC = () => {
         <div className="overflow-hidden">
           <div
             ref={trackRef}
-            className="flex flex-col lg:flex-row gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 lg:w-max lg:will-change-transform"
+            className="flex flex-col lg:flex-row gap-6 lg:gap-10 px-4 sm:px-6 lg:px-8 lg:w-max lg:will-change-transform"
           >
             {pillars.map((p, i) => (
               <PillarCard key={p.id} {...p} order={i} />

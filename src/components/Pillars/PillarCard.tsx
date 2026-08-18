@@ -46,7 +46,7 @@ export const PillarCard: React.FC<PillarCardProps> = ({
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, delay: order * 0.08 }}
       onMouseMove={onSpotlight}
-      className="interactive-card spotlight-card group relative w-full lg:w-[440px] xl:w-[500px] shrink-0 rounded-2xl border border-[#164034] bg-[#0d1410]/70 backdrop-blur-xl p-7 sm:p-9 hover:border-[#00f5a0]/40 transition-colors duration-300"
+      className="interactive-card spotlight-card group relative w-full lg:w-[560px] xl:w-[660px] shrink-0 rounded-2xl border border-[#164034] bg-[#0d1410]/70 backdrop-blur-xl p-7 sm:p-9 hover:border-[#00f5a0]/40 transition-colors duration-300"
     >
       <div className="flex items-start justify-between mb-6">
         <div className="p-3 rounded-xl bg-[#00f5a0]/10 border border-[#00f5a0]/25 text-[#00f5a0]">
