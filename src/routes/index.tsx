@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 
 import { Navbar } from "@/components/Navigation/Navbar";
 import { Hero } from "@/components/Hero/Hero";
+import { TrustBar } from "@/components/Trust/TrustBar";
+import { ScrollProgress } from "@/components/Chrome/ScrollProgress";
 import { Innovation } from "@/components/Innovation/Innovation";
 import { Technology } from "@/components/Technology/Technology";
 import { Capabilities } from "@/components/Capabilities/Capabilities";

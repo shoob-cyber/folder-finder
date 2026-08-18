@@ -36,13 +36,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
     <section
       ref={containerRef}
       id="hero"
-      className="relative min-h-screen w-full bg-[#0a0c0f] pt-24 pb-16 md:pt-32 md:pb-24 flex items-center overflow-hidden"
+      className="aurora-field grain-overlay scan-sweep relative min-h-screen w-full bg-[#0a0c0f] pt-24 pb-16 md:pt-32 md:pb-24 flex items-center overflow-hidden"
       aria-label="Hero Section"
     >
       {/* Background Tech Grid & Atmosphere Glows */}
-      <div className="absolute inset-0 tech-grid-bg opacity-40 pointer-events-none" />
-      <div className="absolute top-1/4 -left-48 w-96 h-96 bg-[#2dd4a8]/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 right-0 w-[30rem] h-[30rem] bg-[#73ffb8]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute inset-0 tech-grid-bg opacity-30 pointer-events-none [mask-image:radial-gradient(70%_60%_at_50%_40%,#000,transparent)]" />
+      <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0a0c0f] to-transparent pointer-events-none" />
 
       <motion.div
         style={{ opacity, y }}
