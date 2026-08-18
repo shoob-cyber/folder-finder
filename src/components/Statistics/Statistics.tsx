@@ -38,12 +38,12 @@ export const Statistics: React.FC = () => {
   return (
     <section
       id="statistics"
-      className="relative w-full bg-[#0a0e27] py-24 sm:py-32 overflow-hidden border-t border-[#1a2847]"
+      className="section-seam grain-overlay relative w-full bg-[#0a0c0f] py-24 sm:py-32 overflow-hidden border-t border-[#1f302a]"
       aria-label="Scientific Impact Statistics"
     >
       {/* Background radial gradients */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e27] via-[#0f153a]/50 to-[#0a0e27] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[20rem] bg-[#00d4ff]/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0c0f] via-[#0f1613]/50 to-[#0a0c0f] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[20rem] bg-[#2dd4a8]/5 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -53,7 +53,7 @@ export const Statistics: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1a2847]/80 border border-[#00d4ff]/30 text-[#00d4ff] text-xs font-mono font-bold tracking-wider uppercase mb-4"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1f302a]/80 border border-[#2dd4a8]/30 text-[#2dd4a8] text-xs font-mono font-bold tracking-wider uppercase mb-4"
           >
             <Award className="w-3.5 h-3.5" />
             Quantifiable Scientific Impact
@@ -64,7 +64,7 @@ export const Statistics: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-6"
+            className="font-display text-[2.1rem] sm:text-[2.75rem] lg:text-[3.4rem] font-extrabold text-white tracking-tight mb-6"
           >
             Validated at Global Scale
           </motion.h2>
@@ -74,7 +74,7 @@ export const Statistics: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg text-[#888899] leading-relaxed"
+            className="text-base sm:text-lg text-[#8a9a93] leading-relaxed"
           >
             Powering clinical pipeline transformation for tier-one pharmaceutical enterprises and pioneering biotech startups worldwide.
           </motion.p>

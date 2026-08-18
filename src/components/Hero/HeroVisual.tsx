@@ -17,7 +17,7 @@ function DNAHelix({ mouse }: { mouse: React.MutableRefObject<[number, number]> }
     const sB: THREE.Vector3[] = [];
     const rData: { start: THREE.Vector3; end: THREE.Vector3; colorA: string; colorB: string }[] = [];
 
-    const colors = ["#00d4ff", "#9d4edd", "#ff6b35", "#00b4d8"];
+    const colors = ["#2dd4a8", "#73ffb8", "#d9f99d", "#1fae8b"];
 
     for (let i = 0; i < numBasePairs; i++) {
       const t = (i / (numBasePairs - 1)) * 2 - 1; // -1 to 1
@@ -70,8 +70,8 @@ function DNAHelix({ mouse }: { mouse: React.MutableRefObject<[number, number]> }
         <mesh key={`a-${idx}`} position={pos}>
           <sphereGeometry args={[0.09, 16, 16]} />
           <meshStandardMaterial
-            color="#00d4ff"
-            emissive="#00d4ff"
+            color="#2dd4a8"
+            emissive="#2dd4a8"
             emissiveIntensity={0.6}
             roughness={0.2}
             metalness={0.8}
@@ -84,8 +84,8 @@ function DNAHelix({ mouse }: { mouse: React.MutableRefObject<[number, number]> }
         <mesh key={`b-${idx}`} position={pos}>
           <sphereGeometry args={[0.09, 16, 16]} />
           <meshStandardMaterial
-            color="#9d4edd"
-            emissive="#9d4edd"
+            color="#73ffb8"
+            emissive="#73ffb8"
             emissiveIntensity={0.6}
             roughness={0.2}
             metalness={0.8}
@@ -106,7 +106,7 @@ function DNAHelix({ mouse }: { mouse: React.MutableRefObject<[number, number]> }
               <cylinderGeometry args={[0.025, 0.025, length, 8]} />
               <meshStandardMaterial
                 color="#ffffff"
-                emissive="#00d4ff"
+                emissive="#2dd4a8"
                 emissiveIntensity={0.3}
                 roughness={0.4}
                 metalness={0.6}
@@ -118,8 +118,8 @@ function DNAHelix({ mouse }: { mouse: React.MutableRefObject<[number, number]> }
             <mesh position={[0, 0, 0]}>
               <sphereGeometry args={[0.05, 12, 12]} />
               <meshStandardMaterial
-                color="#ff6b35"
-                emissive="#ff6b35"
+                color="#d9f99d"
+                emissive="#d9f99d"
                 emissiveIntensity={0.8}
                 roughness={0.1}
               />
@@ -149,17 +149,17 @@ function FloatingMolecularClusters() {
         <group scale={0.75}>
           <Sphere args={[0.26, 24, 24]} position={[0, 0, 0]}>
             <meshStandardMaterial
-              color="#ff6b35"
-              emissive="#ff6b35"
+              color="#d9f99d"
+              emissive="#d9f99d"
               emissiveIntensity={0.5}
               roughness={0.2}
             />
           </Sphere>
           <Sphere args={[0.16, 16, 16]} position={[0.38, 0.25, 0.1]}>
-            <meshStandardMaterial color="#00d4ff" emissive="#00d4ff" emissiveIntensity={0.6} />
+            <meshStandardMaterial color="#2dd4a8" emissive="#2dd4a8" emissiveIntensity={0.6} />
           </Sphere>
           <Sphere args={[0.14, 16, 16]} position={[-0.32, -0.2, 0.15]}>
-            <meshStandardMaterial color="#9d4edd" emissive="#9d4edd" emissiveIntensity={0.5} />
+            <meshStandardMaterial color="#73ffb8" emissive="#73ffb8" emissiveIntensity={0.5} />
           </Sphere>
         </group>
       </Float>
@@ -169,17 +169,17 @@ function FloatingMolecularClusters() {
         <group scale={0.65}>
           <Sphere args={[0.24, 24, 24]} position={[0, 0, 0]}>
             <meshStandardMaterial
-              color="#00d4ff"
-              emissive="#00d4ff"
+              color="#2dd4a8"
+              emissive="#2dd4a8"
               emissiveIntensity={0.7}
               roughness={0.1}
             />
           </Sphere>
           <Sphere args={[0.15, 16, 16]} position={[-0.3, 0.25, -0.1]}>
-            <meshStandardMaterial color="#ff6b35" emissive="#ff6b35" emissiveIntensity={0.6} />
+            <meshStandardMaterial color="#d9f99d" emissive="#d9f99d" emissiveIntensity={0.6} />
           </Sphere>
           <Sphere args={[0.13, 16, 16]} position={[0.28, -0.22, 0.2]}>
-            <meshStandardMaterial color="#ffffff" emissive="#00d4ff" emissiveIntensity={0.4} />
+            <meshStandardMaterial color="#ffffff" emissive="#2dd4a8" emissiveIntensity={0.4} />
           </Sphere>
         </group>
       </Float>
@@ -189,14 +189,14 @@ function FloatingMolecularClusters() {
         <group scale={0.55}>
           <Sphere args={[0.22, 24, 24]} position={[0, 0, 0]}>
             <meshStandardMaterial
-              color="#9d4edd"
-              emissive="#9d4edd"
+              color="#73ffb8"
+              emissive="#73ffb8"
               emissiveIntensity={0.6}
               roughness={0.2}
             />
           </Sphere>
           <Sphere args={[0.14, 16, 16]} position={[0.28, 0.2, 0.1]}>
-            <meshStandardMaterial color="#00d4ff" emissive="#00d4ff" emissiveIntensity={0.5} />
+            <meshStandardMaterial color="#2dd4a8" emissive="#2dd4a8" emissiveIntensity={0.5} />
           </Sphere>
         </group>
       </Float>
@@ -248,7 +248,7 @@ function BioParticles({ count = 120 }) {
       </bufferGeometry>
       <pointsMaterial
         size={0.05}
-        color="#00d4ff"
+        color="#2dd4a8"
         transparent
         opacity={0.65}
         blending={THREE.AdditiveBlending}
@@ -275,8 +275,8 @@ export const HeroVisual: React.FC = () => {
       aria-label="Interactive 3D molecular DNA structure visualization"
     >
       {/* Background Soft Glow Aura */}
-      <div className="absolute inset-0 bg-radial-gradient from-[#00d4ff]/15 via-transparent to-transparent pointer-events-none rounded-full blur-3xl" />
-      <div className="absolute w-72 h-72 bg-[#9d4edd]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-radial-gradient from-[#2dd4a8]/15 via-transparent to-transparent pointer-events-none rounded-full blur-3xl" />
+      <div className="absolute w-72 h-72 bg-[#73ffb8]/10 rounded-full blur-3xl pointer-events-none" />
 
       <Canvas
         camera={{ position: [0, 0, 6.8], fov: 45 }}
@@ -285,8 +285,8 @@ export const HeroVisual: React.FC = () => {
       >
         <ambientLight intensity={0.7} />
         <pointLight position={[10, 10, 10]} intensity={1.5} color="#ffffff" />
-        <pointLight position={[-10, -5, -5]} intensity={1.2} color="#00d4ff" />
-        <pointLight position={[5, -8, 5]} intensity={0.8} color="#ff6b35" />
+        <pointLight position={[-10, -5, -5]} intensity={1.2} color="#2dd4a8" />
+        <pointLight position={[5, -8, 5]} intensity={0.8} color="#d9f99d" />
 
         <DNAHelix mouse={mouse} />
         <FloatingMolecularClusters />
@@ -294,8 +294,8 @@ export const HeroVisual: React.FC = () => {
       </Canvas>
 
       {/* Live 3D Viewport Telemetry Badge */}
-      <div className="absolute bottom-4 right-4 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0a0e27]/80 border border-[#1a2847] backdrop-blur-md text-[11px] font-mono text-[#00d4ff]/90">
-        <span className="w-1.5 h-1.5 rounded-full bg-[#00d4ff] animate-ping" />
+      <div className="absolute bottom-4 right-4 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0a0c0f]/80 border border-[#1f302a] backdrop-blur-md text-[11px] font-mono text-[#2dd4a8]/90">
+        <span className="w-1.5 h-1.5 rounded-full bg-[#2dd4a8] animate-ping" />
         <span>3D SIMULATION LIVE: 60 FPS</span>
       </div>
     </div>

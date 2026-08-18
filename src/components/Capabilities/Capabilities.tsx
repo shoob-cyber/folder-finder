@@ -95,7 +95,7 @@ export const Capabilities: React.FC = () => {
     <section
       ref={containerRef}
       id="capabilities"
-      className="relative w-full bg-[#f8f9fa] py-24 sm:py-32 overflow-hidden border-t border-[#e8ecff]"
+      className="section-seam grain-overlay relative w-full bg-[#0b100e] py-24 sm:py-32 overflow-hidden border-t border-[#1f302a]"
       aria-label="Capabilities Workflow Section"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -106,9 +106,9 @@ export const Capabilities: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e8ecff] text-[#0a0e27] text-xs font-mono font-bold tracking-wider uppercase mb-4"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1f302a] text-[#2dd4a8] text-xs font-mono font-bold tracking-wider uppercase mb-4"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#00d4ff]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#2dd4a8]" />
             Preclinical to Clinic
           </motion.div>
 
@@ -117,7 +117,7 @@ export const Capabilities: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1a1a2e] tracking-tight mb-6"
+            className="font-display text-[2.1rem] sm:text-[2.75rem] lg:text-[3.4rem] font-extrabold text-[#ffffff] tracking-tight mb-6"
           >
             Your Path to Breakthrough
           </motion.h2>
@@ -127,7 +127,7 @@ export const Capabilities: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg text-[#6b7280] leading-relaxed"
+            className="text-base sm:text-lg text-[#9bb0a7] leading-relaxed"
           >
             A cohesive 4-step pipeline that transitions computational biology hypotheses into validated clinical candidates with unparalleled fidelity.
           </motion.p>
@@ -136,10 +136,10 @@ export const Capabilities: React.FC = () => {
         {/* 4-Step Process Timeline */}
         <div className="relative mb-16">
           {/* Desktop Connecting Line */}
-          <div className="hidden lg:block absolute top-8 left-[10%] right-[10%] h-[2px] bg-[#e8ecff] z-0">
+          <div className="hidden lg:block absolute top-8 left-[10%] right-[10%] h-[2px] bg-[#1f302a] z-0">
             <motion.div
               style={{ scaleX: pathLength, transformOrigin: "left" }}
-              className="h-full bg-gradient-to-r from-[#00d4ff] via-[#9d4edd] to-[#ff6b35]"
+              className="h-full bg-gradient-to-r from-[#2dd4a8] via-[#73ffb8] to-[#d9f99d]"
             />
           </div>
 
@@ -165,18 +165,18 @@ export const Capabilities: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="bg-white rounded-2xl p-6 sm:p-10 border border-[#e8ecff] shadow-[0_12px_36px_rgba(0,0,0,0.06)]"
+          className="bg-[#0f1613] rounded-2xl p-6 sm:p-10 border border-[#1f302a] shadow-[0_12px_36px_rgba(0,0,0,0.5)]"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7">
-              <div className="flex items-center gap-2 mb-2 text-xs font-mono font-bold text-[#00d4ff] uppercase tracking-wider">
+              <div className="flex items-center gap-2 mb-2 text-xs font-mono font-bold text-[#2dd4a8] uppercase tracking-wider">
                 <Activity className="w-4 h-4" />
                 <span>Phase 0{steps[activeStep]!.stepNumber} Telemetry</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#1a1a2e] mb-4">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#ffffff] mb-4">
                 {currentInsight.headline}
               </h3>
-              <p className="text-[#6b7280] text-base leading-relaxed mb-6">
+              <p className="text-[#9bb0a7] text-base leading-relaxed mb-6">
                 {currentInsight.summary}
               </p>
 
@@ -184,10 +184,10 @@ export const Capabilities: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setActiveStep((prev) => (prev + 1) % steps.length)}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#0a0e27] hover:bg-[#141c4d] text-white text-xs font-bold font-mono tracking-wider transition-all duration-200"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#0a0c0f] hover:bg-[#16211c] text-white text-xs font-bold font-mono tracking-wider transition-all duration-200"
                 >
                   <span>Next Pipeline Stage</span>
-                  <ArrowRight className="w-4 h-4 text-[#00d4ff]" />
+                  <ArrowRight className="w-4 h-4 text-[#2dd4a8]" />
                 </button>
               </div>
             </div>
@@ -196,10 +196,10 @@ export const Capabilities: React.FC = () => {
               {currentInsight.metrics.map((m, idx) => (
                 <div
                   key={idx}
-                  className="p-4 rounded-xl bg-[#f8f9fa] border border-[#e8ecff] flex items-center justify-between"
+                  className="p-4 rounded-xl bg-[#0b100e] border border-[#1f302a] flex items-center justify-between"
                 >
-                  <span className="text-xs font-medium text-[#6b7280]">{m.label}</span>
-                  <span className="text-base font-extrabold font-mono text-[#0a0e27]">{m.val}</span>
+                  <span className="text-xs font-medium text-[#9bb0a7]">{m.label}</span>
+                  <span className="text-base font-extrabold font-mono text-[#2dd4a8]">{m.val}</span>
                 </div>
               ))}
             </div>

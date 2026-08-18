@@ -18,7 +18,7 @@ export const TechBadge: React.FC<TechBadgeProps> = ({
   name,
   category,
   spec,
-  badgeColor = "#00d4ff",
+  badgeColor = "#2dd4a8",
   index,
   isActive,
   onSelect,
@@ -37,10 +37,10 @@ export const TechBadge: React.FC<TechBadgeProps> = ({
       }}
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.97 }}
-      className={`relative text-left w-full p-5 rounded-xl border transition-all duration-300 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-[#00d4ff] ${
+      className={`relative text-left w-full p-5 rounded-xl border transition-all duration-300 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-[#2dd4a8] ${
         isActive
-          ? "bg-[#141c4d] border-[#00d4ff] shadow-[0_0_25px_rgba(0,212,255,0.35)]"
-          : "bg-[#0f153a]/80 border-[#1a2847] hover:border-[#00d4ff]/50 hover:bg-[#141c4d]/80 hover:shadow-[0_0_20px_rgba(0,212,255,0.2)]"
+          ? "bg-[#16211c] border-[#2dd4a8] shadow-[0_0_25px_rgba(45,212,168,0.35)]"
+          : "bg-[#0f1613]/80 border-[#1f302a] hover:border-[#2dd4a8]/50 hover:bg-[#16211c]/80 hover:shadow-[0_0_20px_rgba(45,212,168,0.2)]"
       }`}
       aria-pressed={isActive}
     >
@@ -63,16 +63,16 @@ export const TechBadge: React.FC<TechBadgeProps> = ({
       <div className="flex flex-col">
         <span className="text-base font-bold text-white tracking-wide mb-1 flex items-center justify-between">
           <span>{name}</span>
-          {isActive && <CheckCircle2 className="w-4 h-4 text-[#00d4ff]" />}
+          {isActive && <CheckCircle2 className="w-4 h-4 text-[#2dd4a8]" />}
         </span>
-        <span className="text-xs text-[#888899] font-mono leading-relaxed">{spec}</span>
+        <span className="text-xs text-[#8a9a93] font-mono leading-relaxed">{spec}</span>
       </div>
 
       {/* Interactive Active Glow Bar */}
       {isActive && (
         <motion.div
           layoutId="activeTechIndicator"
-          className="absolute -bottom-[1px] left-4 right-4 h-[2px] bg-gradient-to-r from-transparent via-[#00d4ff] to-transparent"
+          className="absolute -bottom-[1px] left-4 right-4 h-[2px] bg-gradient-to-r from-transparent via-[#2dd4a8] to-transparent"
         />
       )}
     </motion.button>
