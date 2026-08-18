@@ -565,3 +565,63 @@ body {
 ::-webkit-scrollbar-track { background: #070b09; }
 ::-webkit-scrollbar-thumb { background: #164034; }
 ::-webkit-scrollbar-thumb:hover { background: #00f5a0; }
+
+/* ---- Cyber-Biotech interaction layer ---- */
+.cursor-none,
+.cursor-none * {
+  cursor: none !important;
+}
+
+@utility spotlight-card {
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: radial-gradient(
+      220px circle at var(--mx, 50%) var(--my, 0%),
+      rgba(0, 245, 160, 0.55),
+      rgba(0, 210, 255, 0.18) 40%,
+      transparent 70%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      260px circle at var(--mx, 50%) var(--my, 0%),
+      rgba(0, 245, 160, 0.08),
+      transparent 65%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
