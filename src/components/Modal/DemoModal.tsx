@@ -45,7 +45,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
               spread: 60,
               origin: { y: 0.6 },
               colors: ["#00d4ff", "#9d4edd", "#ff6b35"],
-            });
+            }));
           } catch (e) {}
           return 100;
         }

@@ -27,7 +27,7 @@ export const CTAForm: React.FC = () => {
           spread: 70,
           origin: { y: 0.7 },
           colors: ["#00d4ff", "#9d4edd", "#ff6b35"],
-        });
+        }));
       } catch (err) {
         // Fallback gracefully
       }
