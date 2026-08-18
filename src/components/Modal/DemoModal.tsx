@@ -81,7 +81,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
     },
   ];
 
-  const currentOption = focusOptions.find((f) => f.id === selectedFocus) || focusOptions[0];
+  const currentOption = focusOptions.find((f) => f.id === selectedFocus) || focusOptions[0]!;
 
   return (
     <AnimatePresence>

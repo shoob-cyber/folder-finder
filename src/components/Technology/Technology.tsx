@@ -100,7 +100,7 @@ export const Technology: React.FC = () => {
     },
   ];
 
-  const activeTech = techItems[selectedTechIndex];
+  const activeTech = techItems[selectedTechIndex]!;
 
   return (
     <section

@@ -39,8 +39,8 @@ function DNAHelix({ mouse }: { mouse: React.MutableRefObject<[number, number]> }
       rData.push({
         start: pA,
         end: pB,
-        colorA: colors[i % colors.length],
-        colorB: colors[(i + 2) % colors.length],
+        colorA: colors[i % colors.length]!,
+        colorB: colors[(i + 2) % colors.length]!,
       });
     }
 
@@ -224,13 +224,13 @@ function BioParticles({ count = 120 }) {
 
   useFrame(() => {
     if (!pointsRef.current) return;
-    const posAttr = pointsRef.current.geometry.attributes.position as THREE.BufferAttribute;
+    const posAttr = pointsRef.current.geometry.attributes['position'] as THREE.BufferAttribute;
     const array = posAttr.array as Float32Array;
 
     for (let i = 0; i < count; i++) {
-      array[i * 3 + 1] += velocities[i];
+      array[i * 3 + 1] += velocities[i]!;
       // Reset if particle moves past top
-      if (array[i * 3 + 1] > 5) {
+      if (array[i * 3 + 1]! > 5) {
         array[i * 3 + 1] = -5;
         array[i * 3] = (Math.random() - 0.5) * 8;
       }

@@ -89,7 +89,7 @@ export const Capabilities: React.FC = () => {
     },
   ];
 
-  const currentInsight = steps[activeStep].insights;
+  const currentInsight = steps[activeStep]!.insights;
 
   return (
     <section
@@ -171,7 +171,7 @@ export const Capabilities: React.FC = () => {
             <div className="lg:col-span-7">
               <div className="flex items-center gap-2 mb-2 text-xs font-mono font-bold text-[#00d4ff] uppercase tracking-wider">
                 <Activity className="w-4 h-4" />
-                <span>Phase 0{steps[activeStep].stepNumber} Telemetry</span>
+                <span>Phase 0{steps[activeStep]!.stepNumber} Telemetry</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-[#1a1a2e] mb-4">
                 {currentInsight.headline}

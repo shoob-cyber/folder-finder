@@ -27,7 +27,7 @@ export function useCountUp({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
+        if (entry?.isIntersecting && !hasAnimated) {
           setHasAnimated(true);
           const counterObj = { val: 0 };
 
