@@ -44,12 +44,12 @@ export const InnovationCard: React.FC<InnovationCardProps> = ({
       <div>
         <div className="flex items-center justify-between mb-6">
           {/* Icon with 360 rotation on hover */}
-          <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-[#16211c] border border-[#1f302a] text-[#0a0c0f] group-hover:bg-[#0a0c0f] group-hover:text-[#2dd4a8] transition-all duration-500 shadow-sm">
+          <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-[#16211c] border border-[#1f302a] text-[#2dd4a8] group-hover:bg-[#0a0c0f] group-hover:text-[#2dd4a8] transition-all duration-500 shadow-sm">
             <Icon
               className="w-7 h-7 transition-transform duration-700 ease-out group-hover:rotate-[360deg]"
             />
           </div>
-          <span className="px-3 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-[#0a0c0f]/80 bg-[#16211c] rounded-full border border-[#1f302a]">
+          <span className="px-3 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-[#2dd4a8] bg-[#16211c] rounded-full border border-[#1f302a]">
             {tag}
           </span>
         </div>
@@ -85,7 +85,7 @@ export const InnovationCard: React.FC<InnovationCardProps> = ({
             />
             <div className="flex justify-between text-[11px] text-[#8a9a93]">
               <span>Confocal Standard</span>
-              <span className="text-[#0a0c0f] font-semibold">Nexus Nano-AI</span>
+              <span className="text-[#2dd4a8] font-semibold">Nexus Nano-AI</span>
             </div>
           </div>
         )}
@@ -106,7 +106,7 @@ export const InnovationCard: React.FC<InnovationCardProps> = ({
             </div>
             <div className="flex justify-between text-[11px] text-[#8a9a93]">
               <span>Legacy Wet Lab</span>
-              <span className="text-[#0a0c0f] font-semibold">14.8x Accelerated</span>
+              <span className="text-[#2dd4a8] font-semibold">14.8x Accelerated</span>
             </div>
           </div>
         )}
@@ -121,7 +121,7 @@ export const InnovationCard: React.FC<InnovationCardProps> = ({
               </div>
               <span className="text-xs font-mono text-[#9bb0a7]">Multi-Node Cluster</span>
             </div>
-            <span className="inline-flex items-center gap-1 text-xs font-bold text-[#0a0c0f] font-mono">
+            <span className="inline-flex items-center gap-1 text-xs font-bold text-[#2dd4a8] font-mono">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               99.999% SLA
             </span>

@@ -106,7 +106,7 @@ export const Capabilities: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1f302a] text-[#0a0c0f] text-xs font-mono font-bold tracking-wider uppercase mb-4"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1f302a] text-[#2dd4a8] text-xs font-mono font-bold tracking-wider uppercase mb-4"
           >
             <Sparkles className="w-3.5 h-3.5 text-[#2dd4a8]" />
             Preclinical to Clinic
@@ -199,7 +199,7 @@ export const Capabilities: React.FC = () => {
                   className="p-4 rounded-xl bg-[#0b100e] border border-[#1f302a] flex items-center justify-between"
                 >
                   <span className="text-xs font-medium text-[#9bb0a7]">{m.label}</span>
-                  <span className="text-base font-extrabold font-mono text-[#0a0c0f]">{m.val}</span>
+                  <span className="text-base font-extrabold font-mono text-[#2dd4a8]">{m.val}</span>
                 </div>
               ))}
             </div>

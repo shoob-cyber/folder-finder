@@ -53,7 +53,7 @@ export const Innovation: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1f302a] text-[#0a0c0f] text-xs font-mono font-bold tracking-wider uppercase mb-4"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1f302a] text-[#2dd4a8] text-xs font-mono font-bold tracking-wider uppercase mb-4"
           >
             <Sparkles className="w-3.5 h-3.5 text-[#2dd4a8]" />
             Core Capabilities

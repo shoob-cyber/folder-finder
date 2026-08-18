@@ -39,7 +39,7 @@ export const TimelineStep: React.FC<TimelineStepProps> = ({
         <span
           className={`absolute -top-2 -right-2 w-6 h-6 rounded-full text-[11px] font-mono font-bold flex items-center justify-center border ${
             isActive
-              ? "bg-[#2dd4a8] text-[#0a0c0f] border-white"
+              ? "bg-[#2dd4a8] text-[#2dd4a8] border-white"
               : "bg-[#0a0c0f] text-white border-[#1f302a]"
           }`}
         >
@@ -51,7 +51,7 @@ export const TimelineStep: React.FC<TimelineStepProps> = ({
       <div
         onClick={onSelect}
         className={`mt-6 p-4 rounded-xl transition-all duration-300 cursor-pointer w-full ${
-          isActive ? "bg-[#0f1613] shadow-[0_8px_24px_rgba(45,212,168,0.12)] border border-[#2dd4a8]/40" : "hover:bg-white/60"
+          isActive ? "bg-[#0f1613] shadow-[0_8px_24px_rgba(45,212,168,0.12)] border border-[#2dd4a8]/40" : "hover:bg-white/5"
         }`}
       >
         <h3 className="text-lg sm:text-xl font-bold text-[#ffffff] mb-2 group-hover:text-[#2dd4a8] transition-colors">
@@ -61,7 +61,7 @@ export const TimelineStep: React.FC<TimelineStepProps> = ({
           {description}
         </p>
 
-        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#f0f3fa] text-[11px] font-mono text-[#0a0c0f] font-semibold">
+        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#f0f3fa] text-[11px] font-mono text-[#2dd4a8] font-semibold">
           <CheckCircle2 className="w-3.5 h-3.5 text-[#2dd4a8]" />
           <span>{detail}</span>
         </div>
