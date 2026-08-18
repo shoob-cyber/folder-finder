@@ -71,12 +71,12 @@ export const HeroText: React.FC<HeroTextProps> = ({ onOpenDemo }) => {
             </motion.span>
           ))}
         </span>
-        <span className="block mt-1 text-gradient-bio">
+        <span className="block mt-1">
           {headlineLine2.split(" ").map((word, index) => (
             <motion.span
               key={`line2-${index}`}
               variants={letterVariants}
-              className="inline-block mr-[0.28em]"
+              className="inline-block mr-[0.28em] text-gradient-bio"
             >
               {word}
             </motion.span>
