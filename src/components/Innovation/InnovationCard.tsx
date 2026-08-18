@@ -67,7 +67,7 @@ export const InnovationCard: React.FC<InnovationCardProps> = ({
       </div>
 
       {/* Interactive Micro-Widget */}
-      <div className="mt-4 pt-5 border-t border-[#f0f3fa]">
+      <div className="mt-4 pt-5 border-t border-[#164034]">
         {interactiveType === "slider" && (
           <div className="flex flex-col gap-2">
             <div className="flex justify-between text-xs font-mono">
