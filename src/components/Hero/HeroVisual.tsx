@@ -1,256 +1,162 @@
 import React, { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, Sphere } from "@react-three/drei";
 import * as THREE from "three";
 
-// Procedural DNA Double Helix component
-function DNAHelix({ mouse }: { mouse: React.MutableRefObject<[number, number]> }) {
-  const groupRef = useRef<THREE.Group>(null);
-  const numBasePairs = 28;
-  const radius = 1.35;
-  const height = 7.5;
-  const turns = 2.2;
+const MINT = new THREE.Color("#00f5a0");
+const CYAN = new THREE.Color("#00d2ff");
 
-  // Generate helix strands and connector data
-  const { strandA, strandB, rungs } = useMemo(() => {
-    const sA: THREE.Vector3[] = [];
-    const sB: THREE.Vector3[] = [];
-    const rData: { start: THREE.Vector3; end: THREE.Vector3; colorA: string; colorB: string }[] = [];
-
-    const colors = ["#00f5a0", "#00d2ff", "#7dffd0", "#00c47f"];
-
-    for (let i = 0; i < numBasePairs; i++) {
-      const t = (i / (numBasePairs - 1)) * 2 - 1; // -1 to 1
-      const y = t * (height / 2);
-      const angle = t * Math.PI * turns;
-
-      const x1 = Math.cos(angle) * radius;
-      const z1 = Math.sin(angle) * radius;
-
-      const x2 = Math.cos(angle + Math.PI) * radius;
-      const z2 = Math.sin(angle + Math.PI) * radius;
-
-      const pA = new THREE.Vector3(x1, y, z1);
-      const pB = new THREE.Vector3(x2, y, z2);
-
-      sA.push(pA);
-      sB.push(pB);
-
-      rData.push({
-        start: pA,
-        end: pB,
-        colorA: colors[i % colors.length]!,
-        colorB: colors[(i + 2) % colors.length]!,
-      });
-    }
-
-    return { strandA: sA, strandB: sB, rungs: rData };
-  }, [numBasePairs, radius, height, turns]);
-
-  useFrame((state, delta) => {
-    if (!groupRef.current) return;
-    // 1 full rotation every ~15 seconds (2*PI / 15 rad/s ~= 0.42 rad/s)
-    groupRef.current.rotation.y += delta * 0.42;
-    groupRef.current.rotation.x = THREE.MathUtils.lerp(
-      groupRef.current.rotation.x,
-      mouse.current[1] * 0.25 + Math.sin(state.clock.elapsedTime * 0.5) * 0.08,
-      0.05
-    );
-    groupRef.current.rotation.z = THREE.MathUtils.lerp(
-      groupRef.current.rotation.z,
-      mouse.current[0] * 0.25,
-      0.05
-    );
+function useScrollProgress() {
+  const ref = useRef(0);
+  useFrame(() => {
+    if (typeof window === "undefined") return;
+    const p = Math.min(1, Math.max(0, window.scrollY / (window.innerHeight * 1.2)));
+    ref.current += (p - ref.current) * 0.08;
   });
-
-  return (
-    <group ref={groupRef} position={[0, 0, 0]}>
-      {/* Strand A Nodes */}
-      {strandA.map((pos, idx) => (
-        <mesh key={`a-${idx}`} position={pos}>
-          <sphereGeometry args={[0.09, 16, 16]} />
-          <meshStandardMaterial
-            color="#00f5a0"
-            emissive="#00f5a0"
-            emissiveIntensity={0.6}
-            roughness={0.2}
-            metalness={0.8}
-          />
-        </mesh>
-      ))}
-
-      {/* Strand B Nodes */}
-      {strandB.map((pos, idx) => (
-        <mesh key={`b-${idx}`} position={pos}>
-          <sphereGeometry args={[0.09, 16, 16]} />
-          <meshStandardMaterial
-            color="#00d2ff"
-            emissive="#00d2ff"
-            emissiveIntensity={0.6}
-            roughness={0.2}
-            metalness={0.8}
-          />
-        </mesh>
-      ))}
-
-      {/* Nucleotide Base Connector Rungs */}
-      {rungs.map((rung, idx) => {
-        const mid = new THREE.Vector3().addVectors(rung.start, rung.end).multiplyScalar(0.5);
-        const length = rung.start.distanceTo(rung.end);
-        const direction = new THREE.Vector3().subVectors(rung.end, rung.start).normalize();
-        const quaternion = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), direction);
-
-        return (
-          <group key={`rung-${idx}`} position={mid} quaternion={quaternion}>
-            <mesh>
-              <cylinderGeometry args={[0.025, 0.025, length, 8]} />
-              <meshStandardMaterial
-                color="#ffffff"
-                emissive="#00f5a0"
-                emissiveIntensity={0.3}
-                roughness={0.4}
-                metalness={0.6}
-                transparent
-                opacity={0.75}
-              />
-            </mesh>
-            {/* Center nucleotide bond sphere */}
-            <mesh position={[0, 0, 0]}>
-              <sphereGeometry args={[0.05, 12, 12]} />
-              <meshStandardMaterial
-                color="#7dffd0"
-                emissive="#7dffd0"
-                emissiveIntensity={0.8}
-                roughness={0.1}
-              />
-            </mesh>
-          </group>
-        );
-      })}
-    </group>
-  );
+  return ref;
 }
 
-// Orbiting Molecular Atoms with Warmth & Glow
-function FloatingMolecularClusters() {
+/** Double-helix particle cloud that untwists + tilts as the page scrolls. */
+function HelixPoints({ mouse }: { mouse: React.MutableRefObject<[number, number]> }) {
+  const pointsRef = useRef<THREE.Points>(null);
   const groupRef = useRef<THREE.Group>(null);
+  const scroll = useScrollProgress();
+
+  const PAIRS = 130;
+  const PER_RUNG = 7;
+  const COUNT = PAIRS * (2 + PER_RUNG);
+
+  const { positions, colors, base } = useMemo(() => {
+    const pos = new Float32Array(COUNT * 3);
+    const col = new Float32Array(COUNT * 3);
+    const meta = new Float32Array(COUNT * 3); // t, strandSign, rungOffset(-1..1)
+    let i = 0;
+    const c = new THREE.Color();
+
+    for (let p = 0; p < PAIRS; p++) {
+      const t = (p / (PAIRS - 1)) * 2 - 1;
+      // backbone A + B
+      for (const sign of [1, -1]) {
+        meta[i * 3] = t;
+        meta[i * 3 + 1] = sign;
+        meta[i * 3 + 2] = sign;
+        c.copy(sign > 0 ? MINT : CYAN);
+        col[i * 3] = c.r; col[i * 3 + 1] = c.g; col[i * 3 + 2] = c.b;
+        i++;
+      }
+      // rung particles between the strands
+      for (let r = 0; r < PER_RUNG; r++) {
+        const o = (r / (PER_RUNG - 1)) * 2 - 1;
+        meta[i * 3] = t;
+        meta[i * 3 + 1] = 0;
+        meta[i * 3 + 2] = o;
+        c.copy(MINT).lerp(CYAN, (o + 1) / 2).multiplyScalar(0.75);
+        col[i * 3] = c.r; col[i * 3 + 1] = c.g; col[i * 3 + 2] = c.b;
+        i++;
+      }
+    }
+    return { positions: pos, colors: col, base: meta };
+  }, [COUNT]);
 
   useFrame((state) => {
-    if (!groupRef.current) return;
-    const t = state.clock.elapsedTime * 0.3;
-    groupRef.current.rotation.y = -t;
-    groupRef.current.rotation.x = Math.sin(t * 0.5) * 0.15;
+    const pts = pointsRef.current;
+    if (!pts) return;
+    const time = state.clock.elapsedTime;
+    const s = scroll.current;
+
+    const radius = 1.35;
+    const height = 7.4;
+    // untwist: turns shrink as user scrolls
+    const turns = 2.4 * (1 - s * 0.85);
+    const attr = pts.geometry.attributes["position"] as THREE.BufferAttribute;
+    const arr = attr.array as Float32Array;
+
+    for (let i = 0; i < COUNT; i++) {
+      const t = base[i * 3]!;
+      const off = base[i * 3 + 2]!;
+      const isBackbone = base[i * 3 + 1] !== 0;
+      const angle = t * Math.PI * turns + time * 0.25;
+      const breathe = 1 + Math.sin(time * 0.9 + t * 4) * 0.03;
+      const r = radius * breathe * (isBackbone ? 1 : Math.abs(off));
+      const a = off >= 0 ? angle : angle + Math.PI;
+      arr[i * 3] = Math.cos(a) * r;
+      arr[i * 3 + 1] = t * (height / 2) * (1 + s * 0.18);
+      arr[i * 3 + 2] = Math.sin(a) * r;
+    }
+    attr.needsUpdate = true;
+
+    const g = groupRef.current;
+    if (g) {
+      g.rotation.y += 0.0042;
+      g.rotation.x = THREE.MathUtils.lerp(
+        g.rotation.x,
+        mouse.current[1] * 0.22 + s * 0.85,
+        0.06,
+      );
+      g.rotation.z = THREE.MathUtils.lerp(g.rotation.z, mouse.current[0] * 0.22 - s * 0.5, 0.06);
+      g.scale.setScalar(1 - s * 0.12);
+    }
   });
 
   return (
     <group ref={groupRef}>
-      {/* Molecule 1 - Warm Orange Bio-molecule */}
-      <Float speed={2} rotationIntensity={1.2} floatIntensity={1.5} position={[2.4, 1.8, -1]}>
-        <group scale={0.75}>
-          <Sphere args={[0.26, 24, 24]} position={[0, 0, 0]}>
-            <meshStandardMaterial
-              color="#7dffd0"
-              emissive="#7dffd0"
-              emissiveIntensity={0.5}
-              roughness={0.2}
-            />
-          </Sphere>
-          <Sphere args={[0.16, 16, 16]} position={[0.38, 0.25, 0.1]}>
-            <meshStandardMaterial color="#00f5a0" emissive="#00f5a0" emissiveIntensity={0.6} />
-          </Sphere>
-          <Sphere args={[0.14, 16, 16]} position={[-0.32, -0.2, 0.15]}>
-            <meshStandardMaterial color="#00d2ff" emissive="#00d2ff" emissiveIntensity={0.5} />
-          </Sphere>
-        </group>
-      </Float>
-
-      {/* Molecule 2 - Cyan Receptor Molecule */}
-      <Float speed={2.5} rotationIntensity={1.5} floatIntensity={1.2} position={[-2.2, -1.6, 0.8]}>
-        <group scale={0.65}>
-          <Sphere args={[0.24, 24, 24]} position={[0, 0, 0]}>
-            <meshStandardMaterial
-              color="#00f5a0"
-              emissive="#00f5a0"
-              emissiveIntensity={0.7}
-              roughness={0.1}
-            />
-          </Sphere>
-          <Sphere args={[0.15, 16, 16]} position={[-0.3, 0.25, -0.1]}>
-            <meshStandardMaterial color="#7dffd0" emissive="#7dffd0" emissiveIntensity={0.6} />
-          </Sphere>
-          <Sphere args={[0.13, 16, 16]} position={[0.28, -0.22, 0.2]}>
-            <meshStandardMaterial color="#ffffff" emissive="#00f5a0" emissiveIntensity={0.4} />
-          </Sphere>
-        </group>
-      </Float>
-
-      {/* Molecule 3 - Violet Core */}
-      <Float speed={1.8} rotationIntensity={0.8} floatIntensity={1} position={[1.8, -2.2, -0.5]}>
-        <group scale={0.55}>
-          <Sphere args={[0.22, 24, 24]} position={[0, 0, 0]}>
-            <meshStandardMaterial
-              color="#00d2ff"
-              emissive="#00d2ff"
-              emissiveIntensity={0.6}
-              roughness={0.2}
-            />
-          </Sphere>
-          <Sphere args={[0.14, 16, 16]} position={[0.28, 0.2, 0.1]}>
-            <meshStandardMaterial color="#00f5a0" emissive="#00f5a0" emissiveIntensity={0.5} />
-          </Sphere>
-        </group>
-      </Float>
+      <points ref={pointsRef}>
+        <bufferGeometry>
+          <bufferAttribute attach="attributes-position" args={[positions, 3]} />
+          <bufferAttribute attach="attributes-color" args={[colors, 3]} />
+        </bufferGeometry>
+        <pointsMaterial
+          size={0.075}
+          vertexColors
+          transparent
+          opacity={0.95}
+          sizeAttenuation
+          blending={THREE.AdditiveBlending}
+          depthWrite={false}
+        />
+      </points>
     </group>
   );
 }
 
-// Particle stream flowing upward
-function BioParticles({ count = 120 }) {
-  const pointsRef = useRef<THREE.Points>(null);
-
+/** Ambient drifting particle field. */
+function AmbientField({ count = 140 }) {
+  const ref = useRef<THREE.Points>(null);
   const { positions, velocities } = useMemo(() => {
     const pos = new Float32Array(count * 3);
     const vel = new Float32Array(count);
-
     for (let i = 0; i < count; i++) {
-      pos[i * 3] = (Math.random() - 0.5) * 8;
+      pos[i * 3] = (Math.random() - 0.5) * 9;
       pos[i * 3 + 1] = (Math.random() - 0.5) * 10;
       pos[i * 3 + 2] = (Math.random() - 0.5) * 6;
-      vel[i] = 0.005 + Math.random() * 0.015;
+      vel[i] = 0.004 + Math.random() * 0.012;
     }
-
     return { positions: pos, velocities: vel };
   }, [count]);
 
   useFrame(() => {
-    if (!pointsRef.current) return;
-    const posAttr = pointsRef.current.geometry.attributes['position'] as THREE.BufferAttribute;
-    const array = posAttr.array as Float32Array;
-
+    if (!ref.current) return;
+    const attr = ref.current.geometry.attributes["position"] as THREE.BufferAttribute;
+    const arr = attr.array as Float32Array;
     for (let i = 0; i < count; i++) {
-      array[i * 3 + 1] = array[i * 3 + 1]! + velocities[i]!;
-      // Reset if particle moves past top
-      if (array[i * 3 + 1]! > 5) {
-        array[i * 3 + 1] = -5;
-        array[i * 3] = (Math.random() - 0.5) * 8;
+      arr[i * 3 + 1] = arr[i * 3 + 1]! + velocities[i]!;
+      if (arr[i * 3 + 1]! > 5) {
+        arr[i * 3 + 1] = -5;
+        arr[i * 3] = (Math.random() - 0.5) * 9;
       }
     }
-    posAttr.needsUpdate = true;
+    attr.needsUpdate = true;
   });
 
   return (
-    <points ref={pointsRef}>
+    <points ref={ref}>
       <bufferGeometry>
-        <bufferAttribute
-          attach="attributes-position"
-          args={[positions, 3]}
-        />
+        <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
       <pointsMaterial
-        size={0.05}
-        color="#00f5a0"
+        size={0.04}
+        color="#00d2ff"
         transparent
-        opacity={0.65}
+        opacity={0.4}
         blending={THREE.AdditiveBlending}
         depthWrite={false}
       />
@@ -263,39 +169,38 @@ export const HeroVisual: React.FC = () => {
 
   const handlePointerMove = (e: React.PointerEvent) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-    const y = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
-    mouse.current = [x, y];
+    mouse.current = [
+      ((e.clientX - rect.left) / rect.width) * 2 - 1,
+      -(((e.clientY - rect.top) / rect.height) * 2 - 1),
+    ];
   };
 
   return (
     <div
-      className="relative w-full h-[450px] sm:h-[550px] lg:h-[650px] flex items-center justify-center cursor-grab active:cursor-grabbing"
+      className="relative w-full h-[450px] sm:h-[550px] lg:h-[650px] flex items-center justify-center"
       onPointerMove={handlePointerMove}
-      aria-label="Interactive 3D molecular DNA structure visualization"
+      role="img"
+      aria-label="Interactive 3D double-helix particle simulation that untwists as you scroll"
     >
-      {/* Background Soft Glow Aura */}
-      <div className="absolute inset-0 bg-radial-gradient from-[#00f5a0]/15 via-transparent to-transparent pointer-events-none rounded-full blur-3xl" />
-      <div className="absolute w-72 h-72 bg-[#00d2ff]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute w-72 h-72 bg-[#00f5a0]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute w-96 h-96 bg-[#00d2ff]/[0.07] rounded-full blur-3xl pointer-events-none" />
 
       <Canvas
-        camera={{ position: [0, 0, 6.8], fov: 45 }}
+        camera={{ position: [0, 0, 7], fov: 45 }}
+        dpr={[1, 1.75]}
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
         className="w-full h-full"
       >
-        <ambientLight intensity={0.7} />
-        <pointLight position={[10, 10, 10]} intensity={1.5} color="#ffffff" />
-        <pointLight position={[-10, -5, -5]} intensity={1.2} color="#00f5a0" />
-        <pointLight position={[5, -8, 5]} intensity={0.8} color="#7dffd0" />
-
-        <DNAHelix mouse={mouse} />
-        <FloatingMolecularClusters />
-        <BioParticles count={90} />
+        <HelixPoints mouse={mouse} />
+        <AmbientField count={120} />
       </Canvas>
 
-      {/* Live 3D Viewport Telemetry Badge */}
-      <div className="absolute bottom-4 right-4 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#070b09]/80 border border-[#164034] backdrop-blur-md text-[11px] font-mono text-[#00f5a0]/90">
-        <span className="w-1.5 h-1.5 rounded-full bg-[#00f5a0] animate-ping" />
+      {/* Glassmorphic telemetry badge */}
+      <div className="absolute bottom-4 right-4 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.04] border border-[#00f5a0]/20 backdrop-blur-md text-[11px] font-mono text-[#00f5a0]/90">
+        <span className="relative flex w-1.5 h-1.5">
+          <span className="absolute inline-flex w-full h-full rounded-full bg-[#00f5a0] opacity-75 animate-ping" />
+          <span className="relative inline-flex w-1.5 h-1.5 rounded-full bg-[#00f5a0]" />
+        </span>
         <span>3D SIMULATION LIVE: 60 FPS</span>
       </div>
     </div>
