@@ -1,7 +1,21 @@
-import React, { useRef } from "react";
+import React, { useRef, lazy, Suspense } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { ClientOnly } from "@tanstack/react-router";
 import { HeroText } from "./HeroText";
-import { HeroVisual } from "./HeroVisual";
+
+// three.js touches browser/WebGL APIs at import time — keep it out of SSR.
+const HeroVisual = lazy(() =>
+  import("./HeroVisual").then((m) => ({ default: m.HeroVisual })),
+);
+
+function HeroVisualFallback() {
+  return (
+    <div className="relative w-full h-[450px] sm:h-[550px] lg:h-[650px] flex items-center justify-center">
+      <div className="w-64 h-64 rounded-full bg-[#00d4ff]/10 blur-3xl animate-pulse" />
+    </div>
+  );
+}
+
 
 interface HeroProps {
   onOpenDemo: () => void;
