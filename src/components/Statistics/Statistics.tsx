@@ -38,12 +38,12 @@ export const Statistics: React.FC = () => {
   return (
     <section
       id="statistics"
-      className="section-seam grain-overlay relative w-full bg-[#0a0c0f] py-24 sm:py-32 overflow-hidden border-t border-[#1f302a]"
+      className="section-seam grain-overlay relative w-full bg-[#070b09] py-24 sm:py-32 overflow-hidden border-t border-[#164034]"
       aria-label="Scientific Impact Statistics"
     >
       {/* Background radial gradients */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0c0f] via-[#0f1613]/50 to-[#0a0c0f] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[20rem] bg-[#2dd4a8]/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#070b09] via-[#0d1410]/50 to-[#070b09] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[20rem] bg-[#00f5a0]/5 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -53,7 +53,7 @@ export const Statistics: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1f302a]/80 border border-[#2dd4a8]/30 text-[#2dd4a8] text-xs font-mono font-bold tracking-wider uppercase mb-4"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#164034]/80 border border-[#00f5a0]/30 text-[#00f5a0] text-xs font-mono font-bold tracking-wider uppercase mb-4"
           >
             <Award className="w-3.5 h-3.5" />
             Quantifiable Scientific Impact

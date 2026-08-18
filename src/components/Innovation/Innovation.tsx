@@ -37,13 +37,13 @@ export const Innovation: React.FC = () => {
   return (
     <section
       id="innovation"
-      className="section-seam grain-overlay relative w-full bg-[#0b100e] py-24 sm:py-32 overflow-hidden"
+      className="section-seam grain-overlay relative w-full bg-[#0d1410] py-24 sm:py-32 overflow-hidden"
       aria-label="Innovation Pillars Section"
     >
       {/* Decorative subtle background accents */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#0a0c0f]/10 to-transparent" />
-      <div className="absolute top-1/2 left-0 w-72 h-72 bg-[#2dd4a8]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#73ffb8]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#070b09]/10 to-transparent" />
+      <div className="absolute top-1/2 left-0 w-72 h-72 bg-[#00f5a0]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#00d2ff]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -53,9 +53,9 @@ export const Innovation: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1f302a] text-[#2dd4a8] text-xs font-mono font-bold tracking-wider uppercase mb-4"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#164034] text-[#00f5a0] text-xs font-mono font-bold tracking-wider uppercase mb-4"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#2dd4a8]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#00f5a0]" />
             Core Capabilities
           </motion.div>
 

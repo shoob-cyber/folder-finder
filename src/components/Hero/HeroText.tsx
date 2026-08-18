@@ -42,13 +42,13 @@ export const HeroText: React.FC<HeroTextProps> = ({ onOpenDemo }) => {
         initial={{ opacity: 0, y: -15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#1f302a]/60 border border-[#2dd4a8]/30 backdrop-blur-md w-fit mb-6 shadow-[0_0_15px_rgba(45,212,168,0.15)]"
+        className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#164034]/60 border border-[#00f5a0]/30 backdrop-blur-md w-fit mb-6 shadow-[0_0_15px_rgba(0,245,160,0.15)]"
       >
         <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2dd4a8] opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2dd4a8]"></span>
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00f5a0] opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00f5a0]"></span>
         </span>
-        <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#2dd4a8] font-semibold">
+        <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#00f5a0] font-semibold">
           Cellular Intelligence Platform · Release 4.2
         </span>
       </motion.div>
@@ -113,9 +113,9 @@ export const HeroText: React.FC<HeroTextProps> = ({ onOpenDemo }) => {
 
         <button
           onClick={onOpenDemo}
-          className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base text-white/90 bg-white/5 hover:bg-white/10 border border-white/15 hover:border-[#2dd4a8]/60 hover:text-[#2dd4a8] backdrop-blur-md transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#2dd4a8]"
+          className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base text-white/90 bg-white/5 hover:bg-white/10 border border-white/15 hover:border-[#00f5a0]/60 hover:text-[#00f5a0] backdrop-blur-md transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#00f5a0]"
         >
-          <Play className="w-4 h-4 text-[#2dd4a8] fill-[#2dd4a8]/20" />
+          <Play className="w-4 h-4 text-[#00f5a0] fill-[#00f5a0]/20" />
           <span>Watch the Platform Tour</span>
         </button>
       </motion.div>
@@ -125,10 +125,10 @@ export const HeroText: React.FC<HeroTextProps> = ({ onOpenDemo }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.0 }}
-        className="pt-6 border-t border-[#1f302a] grid grid-cols-1 sm:grid-cols-3 gap-4"
+        className="pt-6 border-t border-[#164034] grid grid-cols-1 sm:grid-cols-3 gap-4"
       >
         <div className="flex items-center gap-2.5">
-          <div className="p-1.5 rounded-lg bg-[#2dd4a8]/10 text-[#2dd4a8]">
+          <div className="p-1.5 rounded-lg bg-[#00f5a0]/10 text-[#00f5a0]">
             <Zap className="w-4 h-4" />
           </div>
           <div className="flex flex-col">
@@ -138,7 +138,7 @@ export const HeroText: React.FC<HeroTextProps> = ({ onOpenDemo }) => {
         </div>
 
         <div className="flex items-center gap-2.5">
-          <div className="p-1.5 rounded-lg bg-[#73ffb8]/10 text-[#73ffb8]">
+          <div className="p-1.5 rounded-lg bg-[#00d2ff]/10 text-[#00d2ff]">
             <Sparkles className="w-4 h-4" />
           </div>
           <div className="flex flex-col">
@@ -148,7 +148,7 @@ export const HeroText: React.FC<HeroTextProps> = ({ onOpenDemo }) => {
         </div>
 
         <div className="flex items-center gap-2.5">
-          <div className="p-1.5 rounded-lg bg-[#d9f99d]/10 text-[#d9f99d]">
+          <div className="p-1.5 rounded-lg bg-[#7dffd0]/10 text-[#7dffd0]">
             <ShieldCheck className="w-4 h-4" />
           </div>
           <div className="flex flex-col">

@@ -4,21 +4,21 @@ import { Dna } from "lucide-react";
 export const Footer: React.FC = () => {
   return (
     <footer
-      className="relative w-full bg-[#070a1e] border-t border-[#1f302a] pt-16 pb-12 overflow-hidden text-white"
+      className="relative w-full bg-[#070a1e] border-t border-[#164034] pt-16 pb-12 overflow-hidden text-white"
       role="contentinfo"
       aria-label="Footer"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-[#1f302a]/70">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-[#164034]/70">
           {/* Brand Col */}
           <div className="lg:col-span-2 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-[#2dd4a8]/15 border border-[#2dd4a8]/40 text-[#2dd4a8]">
+                <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-[#00f5a0]/15 border border-[#00f5a0]/40 text-[#00f5a0]">
                   <Dna className="w-5 h-5" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-mono text-sm tracking-widest text-[#2dd4a8] font-bold">NEXUS</span>
+                  <span className="font-mono text-sm tracking-widest text-[#00f5a0] font-bold">NEXUS</span>
                   <span className="font-sans text-[11px] tracking-wider text-white/80 font-medium -mt-1">BIOTECH</span>
                 </div>
               </div>
@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* Live Operational Status */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0f1613] border border-[#1f302a] w-fit text-xs font-mono text-white/80">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0d1410] border border-[#164034] w-fit text-xs font-mono text-white/80">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span>All Systems Operational (14ms API Latency)</span>
             </div>
@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
 
           {/* Links Col 1 */}
           <div>
-            <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-[#2dd4a8] mb-4">
+            <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-[#00f5a0] mb-4">
               Platform
             </h4>
             <ul className="space-y-2.5 text-sm text-[#8a9a93]">
@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
 
           {/* Links Col 2 */}
           <div>
-            <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-[#2dd4a8] mb-4">
+            <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-[#00f5a0] mb-4">
               Science & Research
             </h4>
             <ul className="space-y-2.5 text-sm text-[#8a9a93]">
@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
 
           {/* Links Col 3 */}
           <div>
-            <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-[#2dd4a8] mb-4">
+            <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-[#00f5a0] mb-4">
               Security & Trust
             </h4>
             <ul className="space-y-2.5 text-sm text-[#8a9a93]">

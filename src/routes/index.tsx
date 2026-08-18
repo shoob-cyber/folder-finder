@@ -5,6 +5,10 @@ import { Navbar } from "@/components/Navigation/Navbar";
 import { Hero } from "@/components/Hero/Hero";
 import { TrustBar } from "@/components/Trust/TrustBar";
 import { ScrollProgress } from "@/components/Chrome/ScrollProgress";
+import { TargetCursor } from "@/components/Chrome/TargetCursor";
+import { Pillars } from "@/components/Pillars/Pillars";
+import { Toaster } from "@/components/ui/sonner";
+import { toast } from "sonner";
 import { Innovation } from "@/components/Innovation/Innovation";
 import { Technology } from "@/components/Technology/Technology";
 import { Capabilities } from "@/components/Capabilities/Capabilities";
@@ -33,6 +37,13 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [isDemoOpen, setIsDemoOpen] = useState(false);
+
+  const openDemo = () => {
+    setIsDemoOpen(true);
+    toast("Secure channel opened", {
+      description: "Platform access request — Nexus Biotech clinical solutions team.",
+    });
+  };
 
   // Lenis smooth scroll (browser only)
   useEffect(() => {
@@ -66,29 +77,32 @@ function Index() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0a0c0f] text-white flex flex-col selection:bg-[#2dd4a8] selection:text-[#0a0c0f]">
+    <div className="min-h-screen bg-[#070b09] text-white flex flex-col selection:bg-[#00f5a0] selection:text-[#070b09]">
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#2dd4a8] text-[#0a0c0f] font-bold rounded-lg shadow-lg focus:outline-none"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#00f5a0] text-[#070b09] font-bold rounded-lg shadow-lg focus:outline-none"
       >
         Skip to main content
       </a>
 
       <ScrollProgress />
-      <Navbar onOpenDemo={() => setIsDemoOpen(true)} />
+      <TargetCursor />
+      <Navbar onOpenDemo={openDemo} />
 
       <main id="main-content" className="flex-1">
-        <Hero onOpenDemo={() => setIsDemoOpen(true)} />
+        <Hero onOpenDemo={openDemo} />
         <TrustBar />
         <Innovation />
+        <Pillars />
         <Technology />
         <Capabilities />
         <Statistics />
-        <CTA onOpenDemo={() => setIsDemoOpen(true)} />
+        <CTA onOpenDemo={openDemo} />
       </main>
 
       <Footer />
 
+      <Toaster />
       <DemoModal isOpen={isDemoOpen} onClose={() => setIsDemoOpen(false)} />
     </div>
   );

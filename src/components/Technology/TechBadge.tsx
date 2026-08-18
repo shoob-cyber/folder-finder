@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { type LucideIcon, CheckCircle2 } from "lucide-react";
+import { useSpotlight } from "../../hooks/useSpotlight";
 
 interface TechBadgeProps {
   icon: LucideIcon;
@@ -18,15 +19,18 @@ export const TechBadge: React.FC<TechBadgeProps> = ({
   name,
   category,
   spec,
-  badgeColor = "#2dd4a8",
+  badgeColor = "#00f5a0",
   index,
   isActive,
   onSelect,
 }) => {
+  const onSpotlight = useSpotlight();
+
   return (
     <motion.button
       type="button"
       onClick={onSelect}
+      onMouseMove={onSpotlight}
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -37,10 +41,10 @@ export const TechBadge: React.FC<TechBadgeProps> = ({
       }}
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.97 }}
-      className={`relative text-left w-full p-5 rounded-xl border transition-all duration-300 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-[#2dd4a8] ${
+      className={`interactive-card spotlight-card relative text-left w-full p-5 rounded-xl border transition-all duration-300 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-[#00f5a0] ${
         isActive
-          ? "bg-[#16211c] border-[#2dd4a8] shadow-[0_0_25px_rgba(45,212,168,0.35)]"
-          : "bg-[#0f1613]/80 border-[#1f302a] hover:border-[#2dd4a8]/50 hover:bg-[#16211c]/80 hover:shadow-[0_0_20px_rgba(45,212,168,0.2)]"
+          ? "bg-[#12201a] border-[#00f5a0] shadow-[0_0_25px_rgba(0,245,160,0.35)]"
+          : "bg-[#0d1410]/80 border-[#164034] hover:border-[#00f5a0]/50 hover:bg-[#12201a]/80 hover:shadow-[0_0_20px_rgba(0,245,160,0.2)]"
       }`}
       aria-pressed={isActive}
     >
@@ -63,7 +67,7 @@ export const TechBadge: React.FC<TechBadgeProps> = ({
       <div className="flex flex-col">
         <span className="text-base font-bold text-white tracking-wide mb-1 flex items-center justify-between">
           <span>{name}</span>
-          {isActive && <CheckCircle2 className="w-4 h-4 text-[#2dd4a8]" />}
+          {isActive && <CheckCircle2 className="w-4 h-4 text-[#00f5a0]" />}
         </span>
         <span className="text-xs text-[#8a9a93] font-mono leading-relaxed">{spec}</span>
       </div>
@@ -72,7 +76,7 @@ export const TechBadge: React.FC<TechBadgeProps> = ({
       {isActive && (
         <motion.div
           layoutId="activeTechIndicator"
-          className="absolute -bottom-[1px] left-4 right-4 h-[2px] bg-gradient-to-r from-transparent via-[#2dd4a8] to-transparent"
+          className="absolute -bottom-[1px] left-4 right-4 h-[2px] bg-gradient-to-r from-transparent via-[#00f5a0] to-transparent"
         />
       )}
     </motion.button>

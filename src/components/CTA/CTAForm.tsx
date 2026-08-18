@@ -26,7 +26,7 @@ export const CTAForm: React.FC = () => {
           particleCount: 80,
           spread: 70,
           origin: { y: 0.7 },
-          colors: ["#2dd4a8", "#73ffb8", "#d9f99d"],
+          colors: ["#00f5a0", "#00d2ff", "#7dffd0"],
         }));
       } catch (err) {
         // Fallback gracefully
@@ -40,21 +40,21 @@ export const CTAForm: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="p-6 rounded-2xl bg-[#0f1613] border border-[#2dd4a8]/50 text-center shadow-[0_0_30px_rgba(45,212,168,0.3)]"
+          className="p-6 rounded-2xl bg-[#0d1410] border border-[#00f5a0]/50 text-center shadow-[0_0_30px_rgba(0,245,160,0.3)]"
         >
-          <div className="w-12 h-12 rounded-full bg-[#2dd4a8]/10 text-[#2dd4a8] flex items-center justify-center mx-auto mb-3">
+          <div className="w-12 h-12 rounded-full bg-[#00f5a0]/10 text-[#00f5a0] flex items-center justify-center mx-auto mb-3">
             <CheckCircle2 className="w-6 h-6" />
           </div>
           <h4 className="text-xl font-bold text-white mb-2">Access Request Received</h4>
           <p className="text-sm text-[#8a9a93] mb-4">
-            Our computational biology onboarding team has sent an enterprise sandbox key to <span className="text-[#2dd4a8] font-mono">{email}</span>.
+            Our computational biology onboarding team has sent an enterprise sandbox key to <span className="text-[#00f5a0] font-mono">{email}</span>.
           </p>
           <button
             onClick={() => {
               setIsSuccess(false);
               setEmail("");
             }}
-            className="text-xs text-[#2dd4a8] hover:underline font-mono"
+            className="text-xs text-[#00f5a0] hover:underline font-mono"
           >
             Register another institutional address →
           </button>
@@ -73,14 +73,14 @@ export const CTAForm: React.FC = () => {
                 if (errorMessage) setErrorMessage("");
               }}
               placeholder="Enter institutional or work email (e.g. name@pharma.com)"
-              className="w-full pl-12 pr-36 py-4 rounded-xl bg-[#0f1613]/90 border border-[#1f302a] text-white placeholder-[#8a9a93] text-sm sm:text-base focus:outline-none focus:border-[#2dd4a8] focus:ring-2 focus:ring-[#2dd4a8]/40 shadow-inner transition-all duration-200"
+              className="w-full pl-12 pr-36 py-4 rounded-xl bg-[#0d1410]/90 border border-[#164034] text-white placeholder-[#8a9a93] text-sm sm:text-base focus:outline-none focus:border-[#00f5a0] focus:ring-2 focus:ring-[#00f5a0]/40 shadow-inner transition-all duration-200"
               aria-label="Institutional email address"
               required
             />
             <button
               type="submit"
               disabled={isSubmitting}
-              className="absolute right-2 top-2 bottom-2 px-5 rounded-lg bg-[#2dd4a8] hover:bg-[#1fae8b] text-[#0a0c0f] font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2 shadow-[0_0_15px_rgba(45,212,168,0.4)] hover:shadow-[0_0_25px_rgba(45,212,168,0.6)] transition-all duration-200 disabled:opacity-70 focus:outline-none focus:ring-2 focus:ring-white"
+              className="absolute right-2 top-2 bottom-2 px-5 rounded-lg bg-[#00f5a0] hover:bg-[#00c47f] text-[#070b09] font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2 shadow-[0_0_15px_rgba(0,245,160,0.4)] hover:shadow-[0_0_25px_rgba(0,245,160,0.6)] transition-all duration-200 disabled:opacity-70 focus:outline-none focus:ring-2 focus:ring-white"
             >
               {isSubmitting ? (
                 <>
@@ -97,7 +97,7 @@ export const CTAForm: React.FC = () => {
           </div>
 
           {errorMessage && (
-            <span className="text-xs text-[#d9f99d] font-medium text-left px-2">
+            <span className="text-xs text-[#7dffd0] font-medium text-left px-2">
               {errorMessage}
             </span>
           )}
