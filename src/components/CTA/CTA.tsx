@@ -11,7 +11,7 @@ export const CTA: React.FC<CTAProps> = ({ onOpenDemo }) => {
   return (
     <section
       id="cta"
-      className="relative w-full bg-[#0a0c0f] py-28 sm:py-36 overflow-hidden border-t border-[#1f302a]"
+      className="section-seam grain-overlay aurora-field relative w-full bg-[#0a0c0f] py-28 sm:py-36 overflow-hidden border-t border-[#1f302a]"
       aria-label="Call to Action Section"
     >
       {/* Animated Glowing Radial Aura */}

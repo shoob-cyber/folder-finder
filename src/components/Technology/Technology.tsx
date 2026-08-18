@@ -105,7 +105,7 @@ export const Technology: React.FC = () => {
   return (
     <section
       id="technology"
-      className="relative w-full bg-[#0a0c0f] py-24 sm:py-32 overflow-hidden tech-grid-subtle border-t border-[#1f302a]"
+      className="section-seam grain-overlay scan-sweep relative w-full bg-[#0a0c0f] py-24 sm:py-32 overflow-hidden tech-grid-subtle border-t border-[#1f302a]"
       aria-label="Technology Stack Section"
     >
       {/* Glow Orbs */}

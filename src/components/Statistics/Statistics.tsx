@@ -38,7 +38,7 @@ export const Statistics: React.FC = () => {
   return (
     <section
       id="statistics"
-      className="relative w-full bg-[#0a0c0f] py-24 sm:py-32 overflow-hidden border-t border-[#1f302a]"
+      className="section-seam grain-overlay relative w-full bg-[#0a0c0f] py-24 sm:py-32 overflow-hidden border-t border-[#1f302a]"
       aria-label="Scientific Impact Statistics"
     >
       {/* Background radial gradients */}

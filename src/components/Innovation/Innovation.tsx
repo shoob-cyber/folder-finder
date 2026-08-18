@@ -37,7 +37,7 @@ export const Innovation: React.FC = () => {
   return (
     <section
       id="innovation"
-      className="relative w-full bg-[#0b100e] py-24 sm:py-32 overflow-hidden"
+      className="section-seam grain-overlay relative w-full bg-[#0b100e] py-24 sm:py-32 overflow-hidden"
       aria-label="Innovation Pillars Section"
     >
       {/* Decorative subtle background accents */}

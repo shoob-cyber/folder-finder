@@ -95,7 +95,7 @@ export const Capabilities: React.FC = () => {
     <section
       ref={containerRef}
       id="capabilities"
-      className="relative w-full bg-[#0b100e] py-24 sm:py-32 overflow-hidden border-t border-[#1f302a]"
+      className="section-seam grain-overlay relative w-full bg-[#0b100e] py-24 sm:py-32 overflow-hidden border-t border-[#1f302a]"
       aria-label="Capabilities Workflow Section"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
