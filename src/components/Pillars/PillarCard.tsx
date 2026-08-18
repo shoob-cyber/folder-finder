@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
+import { useSpotlight } from "../../hooks/useSpotlight";
 import { useCountUp } from "../../hooks/useCountUp";
 
 interface PillarCardProps {
@@ -30,6 +31,7 @@ export const PillarCard: React.FC<PillarCardProps> = ({
   specs,
   order,
 }) => {
+  const onSpotlight = useSpotlight();
   const { displayValue, elementRef } = useCountUp({
     endValue: metricValue,
     duration: 2,
@@ -43,6 +45,7 @@ export const PillarCard: React.FC<PillarCardProps> = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, delay: order * 0.08 }}
+      onMouseMove={onSpotlight}
       className="interactive-card spotlight-card group relative w-full lg:w-[440px] xl:w-[500px] shrink-0 rounded-2xl border border-[#164034] bg-[#0d1410]/70 backdrop-blur-xl p-7 sm:p-9 hover:border-[#00f5a0]/40 transition-colors duration-300"
     >
       <div className="flex items-start justify-between mb-6">
