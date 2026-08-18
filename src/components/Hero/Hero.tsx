@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ClientOnly } from "@tanstack/react-router";
 import { HeroText } from "./HeroText";
 
-// three.js touches browser/WebGL APIs at import time — keep it out of SSR.
+// R3F/Three access WebGL at import time, so we lazy-load it and only render on the client.
 const HeroVisual = lazy(() =>
   import("./HeroVisual").then((m) => ({ default: m.HeroVisual })),
 );
