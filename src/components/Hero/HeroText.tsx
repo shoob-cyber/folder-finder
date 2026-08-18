@@ -7,8 +7,8 @@ interface HeroTextProps {
 }
 
 export const HeroText: React.FC<HeroTextProps> = ({ onOpenDemo }) => {
-  const headlineLine1 = "Transform Disease Research";
-  const headlineLine2 = "Into Clinical Reality";
+  const headlineLine1 = "Precision biology,";
+  const headlineLine2 = "engineered for the clinic.";
 
   // Letter reveal animation variants
   const containerVariants: Variants = {
