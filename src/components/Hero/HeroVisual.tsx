@@ -15,7 +15,6 @@ function useScrollProgress() {
   return ref;
 }
 
-/** Double-helix particle cloud that untwists + tilts as the page scrolls. */
 function HelixPoints({ mouse }: { mouse: React.MutableRefObject<[number, number]> }) {
   const pointsRef = useRef<THREE.Points>(null);
   const groupRef = useRef<THREE.Group>(null);
@@ -118,7 +117,6 @@ function HelixPoints({ mouse }: { mouse: React.MutableRefObject<[number, number]
   );
 }
 
-/** Ambient drifting particle field. */
 function AmbientField({ count = 140 }) {
   const ref = useRef<THREE.Points>(null);
   const { positions, velocities } = useMemo(() => {
