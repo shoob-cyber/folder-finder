@@ -16,7 +16,7 @@ export const TrustBar: React.FC = () => {
   return (
     <section
       aria-label="Research partners"
-      className="section-seam relative w-full bg-[#0a0c0f] py-10 overflow-hidden"
+      className="section-seam relative w-full bg-[#070b09] py-10 overflow-hidden"
     >
       <motion.p
         initial={{ opacity: 0, y: 10 }}
@@ -33,7 +33,7 @@ export const TrustBar: React.FC = () => {
           {[...partners, ...partners].map((name, i) => (
             <span
               key={`${name}-${i}`}
-              className="whitespace-nowrap font-display text-sm sm:text-base font-semibold tracking-tight text-white/35 hover:text-[#2dd4a8] transition-colors duration-300"
+              className="whitespace-nowrap font-display text-sm sm:text-base font-semibold tracking-tight text-white/35 hover:text-[#00f5a0] transition-colors duration-300"
             >
               {name}
             </span>

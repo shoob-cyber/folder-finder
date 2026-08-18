@@ -38,26 +38,26 @@ export const InnovationCard: React.FC<InnovationCardProps> = ({
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative flex flex-col justify-between bg-[#0f1613] rounded-2xl p-6 sm:p-8 border border-[#1f302a] shadow-[0_4px_16px_rgba(0,0,0,0.5)] hover:shadow-[0_16px_36px_rgba(45,212,168,0.14)] hover:border-[#2dd4a8]/40 transition-all duration-300 transform hover:-translate-y-1.5"
+      className="group relative flex flex-col justify-between bg-[#0d1410] rounded-2xl p-6 sm:p-8 border border-[#164034] shadow-[0_4px_16px_rgba(0,0,0,0.5)] hover:shadow-[0_16px_36px_rgba(0, 245, 160,0.14)] hover:border-[#00f5a0]/40 transition-all duration-300 transform hover:-translate-y-1.5"
     >
       {/* Top Header & Tag */}
       <div>
         <div className="flex items-center justify-between mb-6">
           {/* Icon with 360 rotation on hover */}
-          <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-[#16211c] border border-[#1f302a] text-[#2dd4a8] group-hover:bg-[#0a0c0f] group-hover:text-[#2dd4a8] transition-all duration-500 shadow-sm">
+          <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-[#12201a] border border-[#164034] text-[#00f5a0] group-hover:bg-[#070b09] group-hover:text-[#00f5a0] transition-all duration-500 shadow-sm">
             <Icon
               className="w-7 h-7 transition-transform duration-700 ease-out group-hover:rotate-[360deg]"
             />
           </div>
-          <span className="px-3 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-[#2dd4a8] bg-[#16211c] rounded-full border border-[#1f302a]">
+          <span className="px-3 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-[#00f5a0] bg-[#12201a] rounded-full border border-[#164034]">
             {tag}
           </span>
         </div>
 
         {/* Title */}
-        <h3 className="text-xl sm:text-2xl font-bold text-[#ffffff] group-hover:text-[#2dd4a8] transition-colors duration-200 mb-3 flex items-center justify-between">
+        <h3 className="text-xl sm:text-2xl font-bold text-[#ffffff] group-hover:text-[#00f5a0] transition-colors duration-200 mb-3 flex items-center justify-between">
           <span>{title}</span>
-          <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200 text-[#2dd4a8]" />
+          <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200 text-[#00f5a0]" />
         </h3>
 
         {/* Description */}
@@ -80,12 +80,12 @@ export const InnovationCard: React.FC<InnovationCardProps> = ({
               max="100"
               value={sliderVal}
               onChange={(e) => setSliderVal(Number(e.target.value))}
-              className="w-full h-1.5 bg-[#1f302a] rounded-lg appearance-none cursor-pointer accent-[#2dd4a8]"
+              className="w-full h-1.5 bg-[#164034] rounded-lg appearance-none cursor-pointer accent-[#00f5a0]"
               aria-label="Resolution scale slider"
             />
             <div className="flex justify-between text-[11px] text-[#8a9a93]">
               <span>Confocal Standard</span>
-              <span className="text-[#2dd4a8] font-semibold">Nexus Nano-AI</span>
+              <span className="text-[#00f5a0] font-semibold">Nexus Nano-AI</span>
             </div>
           </div>
         )}
@@ -96,17 +96,17 @@ export const InnovationCard: React.FC<InnovationCardProps> = ({
               <span className="text-[#8a9a93]">Trial Simulation Lead</span>
               <span className="font-bold text-[#ffffff]">2.4 Weeks vs 18 Mos</span>
             </div>
-            <div className="w-full bg-[#1f302a] h-2 rounded-full overflow-hidden flex">
+            <div className="w-full bg-[#164034] h-2 rounded-full overflow-hidden flex">
               <motion.div
                 initial={{ width: "20%" }}
                 animate={{ width: isHovered ? "92%" : "75%" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="bg-gradient-to-r from-[#2dd4a8] to-[#73ffb8] h-full rounded-full"
+                className="bg-gradient-to-r from-[#00f5a0] to-[#00d2ff] h-full rounded-full"
               />
             </div>
             <div className="flex justify-between text-[11px] text-[#8a9a93]">
               <span>Legacy Wet Lab</span>
-              <span className="text-[#2dd4a8] font-semibold">14.8x Accelerated</span>
+              <span className="text-[#00f5a0] font-semibold">14.8x Accelerated</span>
             </div>
           </div>
         )}
@@ -115,13 +115,13 @@ export const InnovationCard: React.FC<InnovationCardProps> = ({
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <div className="flex -space-x-1.5">
-                <span className="w-5 h-5 rounded-full bg-[#2dd4a8] border-2 border-white flex items-center justify-center text-[8px] font-bold text-white">AWS</span>
-                <span className="w-5 h-5 rounded-full bg-[#73ffb8] border-2 border-white flex items-center justify-center text-[8px] font-bold text-white">GCP</span>
-                <span className="w-5 h-5 rounded-full bg-[#d9f99d] border-2 border-white flex items-center justify-center text-[8px] font-bold text-white">AZ</span>
+                <span className="w-5 h-5 rounded-full bg-[#00f5a0] border-2 border-white flex items-center justify-center text-[8px] font-bold text-white">AWS</span>
+                <span className="w-5 h-5 rounded-full bg-[#00d2ff] border-2 border-white flex items-center justify-center text-[8px] font-bold text-white">GCP</span>
+                <span className="w-5 h-5 rounded-full bg-[#7dffd0] border-2 border-white flex items-center justify-center text-[8px] font-bold text-white">AZ</span>
               </div>
               <span className="text-xs font-mono text-[#9bb0a7]">Multi-Node Cluster</span>
             </div>
-            <span className="inline-flex items-center gap-1 text-xs font-bold text-[#2dd4a8] font-mono">
+            <span className="inline-flex items-center gap-1 text-xs font-bold text-[#00f5a0] font-mono">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               99.999% SLA
             </span>
@@ -129,7 +129,7 @@ export const InnovationCard: React.FC<InnovationCardProps> = ({
         )}
 
         {/* Metric display */}
-        <div className="mt-4 flex items-baseline justify-between pt-3 border-t border-dashed border-[#1f302a]">
+        <div className="mt-4 flex items-baseline justify-between pt-3 border-t border-dashed border-[#164034]">
           <span className="text-xs text-[#8a9a93] uppercase tracking-wider">{metricLabel}</span>
           <span className="text-lg font-extrabold text-[#ffffff] font-mono">{metric}</span>
         </div>

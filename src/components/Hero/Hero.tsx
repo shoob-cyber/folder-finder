@@ -11,7 +11,7 @@ const HeroVisual = lazy(() =>
 function HeroVisualFallback() {
   return (
     <div className="relative w-full h-[450px] sm:h-[550px] lg:h-[650px] flex items-center justify-center">
-      <div className="w-64 h-64 rounded-full bg-[#2dd4a8]/10 blur-3xl animate-pulse" />
+      <div className="w-64 h-64 rounded-full bg-[#00f5a0]/10 blur-3xl animate-pulse" />
     </div>
   );
 }
@@ -36,12 +36,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
     <section
       ref={containerRef}
       id="hero"
-      className="aurora-field grain-overlay scan-sweep relative min-h-screen w-full bg-[#0a0c0f] pt-24 pb-16 md:pt-32 md:pb-24 flex items-center overflow-hidden"
+      className="aurora-field grain-overlay scan-sweep relative min-h-screen w-full bg-[#070b09] pt-24 pb-16 md:pt-32 md:pb-24 flex items-center overflow-hidden"
       aria-label="Hero Section"
     >
       {/* Background Tech Grid & Atmosphere Glows */}
       <div className="absolute inset-0 tech-grid-bg opacity-30 pointer-events-none [mask-image:radial-gradient(70%_60%_at_50%_40%,#000,transparent)]" />
-      <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0a0c0f] to-transparent pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#070b09] to-transparent pointer-events-none" />
 
       <motion.div
         style={{ opacity, y }}
@@ -73,7 +73,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
           className="w-4 h-7 rounded-full border border-white/20 flex justify-center pt-1"
         >
-          <div className="w-1 h-1.5 rounded-full bg-[#2dd4a8]" />
+          <div className="w-1 h-1.5 rounded-full bg-[#00f5a0]" />
         </motion.div>
       </div>
     </section>

@@ -44,7 +44,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
               particleCount: 50,
               spread: 60,
               origin: { y: 0.6 },
-              colors: ["#2dd4a8", "#73ffb8", "#d9f99d"],
+              colors: ["#00f5a0", "#00d2ff", "#7dffd0"],
             }));
           } catch (e) {}
           return 100;
@@ -93,7 +93,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-[#0a0c0f]/85 backdrop-blur-xl transition-opacity"
+            className="fixed inset-0 bg-[#070b09]/85 backdrop-blur-xl transition-opacity"
             aria-hidden="true"
           />
 
@@ -103,15 +103,15 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="relative w-full max-w-2xl bg-[#0f1613] border border-[#1f302a] shadow-[0_0_50px_rgba(45,212,168,0.25)] rounded-2xl p-6 sm:p-8 overflow-hidden z-10 text-white"
+            className="relative w-full max-w-2xl bg-[#0d1410] border border-[#164034] shadow-[0_0_50px_rgba(0, 245, 160,0.25)] rounded-2xl p-6 sm:p-8 overflow-hidden z-10 text-white"
             role="dialog"
             aria-modal="true"
             aria-labelledby="demo-modal-title"
           >
             {/* Header */}
-            <div className="flex items-center justify-between border-b border-[#1f302a] pb-4 mb-6">
+            <div className="flex items-center justify-between border-b border-[#164034] pb-4 mb-6">
               <div className="flex items-center gap-3">
-                <div className="p-2 rounded-xl bg-[#2dd4a8]/10 text-[#2dd4a8]">
+                <div className="p-2 rounded-xl bg-[#00f5a0]/10 text-[#00f5a0]">
                   <Dna className="w-6 h-6" />
                 </div>
                 <div>
@@ -125,7 +125,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
               </div>
               <button
                 onClick={onClose}
-                className="p-2 rounded-lg text-[#8a9a93] hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-[#2dd4a8]"
+                className="p-2 rounded-lg text-[#8a9a93] hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-[#00f5a0]"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
@@ -148,28 +148,28 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                     }}
                     className={`p-3 rounded-xl border text-left transition-all duration-200 ${
                       selectedFocus === opt.id
-                        ? "bg-[#16211c] border-[#2dd4a8] text-white shadow-[0_0_15px_rgba(45,212,168,0.25)]"
-                        : "bg-[#0a0c0f]/60 border-[#1f302a] text-[#8a9a93] hover:border-white/20 hover:text-white"
+                        ? "bg-[#12201a] border-[#00f5a0] text-white shadow-[0_0_15px_rgba(0, 245, 160,0.25)]"
+                        : "bg-[#070b09]/60 border-[#164034] text-[#8a9a93] hover:border-white/20 hover:text-white"
                     }`}
                   >
                     <div className="font-bold text-sm text-white mb-0.5">{opt.name}</div>
-                    <div className="text-[11px] font-mono text-[#2dd4a8]">{opt.target}</div>
+                    <div className="text-[11px] font-mono text-[#00f5a0]">{opt.target}</div>
                   </button>
                 ))}
               </div>
             </div>
 
             {/* Step 2: Simulation Terminal */}
-            <div className="p-4 rounded-xl bg-[#0a0c0f] border border-[#1f302a] mb-6">
+            <div className="p-4 rounded-xl bg-[#070b09] border border-[#164034] mb-6">
               <div className="flex items-center justify-between mb-3 text-xs font-mono">
                 <span className="text-[#8a9a93]">SIMULATION PIPELINE TARGET</span>
-                <span className="text-[#2dd4a8] font-bold">{currentOption.target}</span>
+                <span className="text-[#00f5a0] font-bold">{currentOption.target}</span>
               </div>
 
               {/* Progress bar */}
-              <div className="w-full bg-[#1f302a] h-2.5 rounded-full overflow-hidden mb-3">
+              <div className="w-full bg-[#164034] h-2.5 rounded-full overflow-hidden mb-3">
                 <motion.div
-                  className="bg-gradient-to-r from-[#2dd4a8] via-[#73ffb8] to-[#d9f99d] h-full"
+                  className="bg-gradient-to-r from-[#00f5a0] via-[#00d2ff] to-[#7dffd0] h-full"
                   style={{ width: `${progress}%` }}
                 />
               </div>
@@ -179,19 +179,19 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="grid grid-cols-3 gap-2 pt-2 border-t border-[#1f302a] text-center"
+                  className="grid grid-cols-3 gap-2 pt-2 border-t border-[#164034] text-center"
                 >
-                  <div className="p-2 rounded bg-[#0f1613]">
+                  <div className="p-2 rounded bg-[#0d1410]">
                     <span className="text-[10px] text-[#8a9a93] block font-mono">BINDING AFFINITY</span>
-                    <span className="text-sm font-bold text-[#2dd4a8] font-mono">0.34 nM (High)</span>
+                    <span className="text-sm font-bold text-[#00f5a0] font-mono">0.34 nM (High)</span>
                   </div>
-                  <div className="p-2 rounded bg-[#0f1613]">
+                  <div className="p-2 rounded bg-[#0d1410]">
                     <span className="text-[10px] text-[#8a9a93] block font-mono">SELECTIVITY</span>
                     <span className="text-sm font-bold text-emerald-400 font-mono">99.8%</span>
                   </div>
-                  <div className="p-2 rounded bg-[#0f1613]">
+                  <div className="p-2 rounded bg-[#0d1410]">
                     <span className="text-[10px] text-[#8a9a93] block font-mono">SAFETY SCORE</span>
-                    <span className="text-sm font-bold text-[#73ffb8] font-mono">Grade 1 (Safe)</span>
+                    <span className="text-sm font-bold text-[#00d2ff] font-mono">Grade 1 (Safe)</span>
                   </div>
                 </motion.div>
               ) : (
@@ -207,7 +207,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
               <button
                 onClick={handleStartSim}
                 disabled={isSimulating}
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#2dd4a8] hover:bg-[#1fae8b] text-[#0a0c0f] font-bold text-sm flex items-center justify-center gap-2 shadow-cyan-glow transition-all duration-200 disabled:opacity-50"
+                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#00f5a0] hover:bg-[#00c47f] text-[#070b09] font-bold text-sm flex items-center justify-center gap-2 shadow-cyan-glow transition-all duration-200 disabled:opacity-50"
               >
                 {isSimulating ? (
                   <>
@@ -216,7 +216,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                   </>
                 ) : (
                   <>
-                    <Play className="w-4 h-4 fill-[#0a0c0f]" />
+                    <Play className="w-4 h-4 fill-[#070b09]" />
                     <span>Run Instant In-Silico Assay</span>
                   </>
                 )}
