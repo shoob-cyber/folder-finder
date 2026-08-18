@@ -5,6 +5,9 @@ import { Navbar } from "@/components/Navigation/Navbar";
 import { Hero } from "@/components/Hero/Hero";
 import { TrustBar } from "@/components/Trust/TrustBar";
 import { ScrollProgress } from "@/components/Chrome/ScrollProgress";
+import { TargetCursor } from "@/components/Chrome/TargetCursor";
+import { Pillars } from "@/components/Pillars/Pillars";
+import { Toaster } from "@/components/ui/sonner";
 import { Innovation } from "@/components/Innovation/Innovation";
 import { Technology } from "@/components/Technology/Technology";
 import { Capabilities } from "@/components/Capabilities/Capabilities";
@@ -75,12 +78,14 @@ function Index() {
       </a>
 
       <ScrollProgress />
+      <TargetCursor />
       <Navbar onOpenDemo={() => setIsDemoOpen(true)} />
 
       <main id="main-content" className="flex-1">
         <Hero onOpenDemo={() => setIsDemoOpen(true)} />
         <TrustBar />
         <Innovation />
+        <Pillars />
         <Technology />
         <Capabilities />
         <Statistics />
@@ -89,6 +94,7 @@ function Index() {
 
       <Footer />
 
+      <Toaster />
       <DemoModal isOpen={isDemoOpen} onClose={() => setIsDemoOpen(false)} />
     </div>
   );
