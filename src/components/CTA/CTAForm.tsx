@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
-import confetti from "canvas-confetti";
 
 export const CTAForm: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -23,7 +22,7 @@ export const CTAForm: React.FC = () => {
       setIsSubmitting(false);
       setIsSuccess(true);
       try {
-        confetti({
+        void import("canvas-confetti").then(({ default: confetti }) => confetti({
           particleCount: 80,
           spread: 70,
           origin: { y: 0.7 },

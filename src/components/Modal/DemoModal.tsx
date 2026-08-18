@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Play, Loader2, Dna } from "lucide-react";
-import confetti from "canvas-confetti";
 
 interface DemoModalProps {
   isOpen: boolean;
@@ -41,7 +40,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
           setIsSimulating(false);
           setSimComplete(true);
           try {
-            confetti({
+            void import("canvas-confetti").then(({ default: confetti }) => confetti({
               particleCount: 50,
               spread: 60,
               origin: { y: 0.6 },
