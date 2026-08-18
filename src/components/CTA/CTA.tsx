@@ -77,7 +77,7 @@ export const CTA: React.FC<CTAProps> = ({ onOpenDemo }) => {
         >
           <button
             onClick={onOpenDemo}
-            className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/20 hover:border-[#00f5a0]/80 text-white font-semibold text-sm transition-all duration-200 hover:scale-[1.03] active:scale-[0.98] shadow-sm hover:shadow-[0_0_20px_rgba(0, 245, 160,0.25)]"
+            className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/20 hover:border-[#00f5a0]/80 text-white font-semibold text-sm transition-all duration-200 hover:scale-[1.03] active:scale-[0.98] shadow-sm hover:shadow-[0_0_20px_rgba(0,245,160,0.25)]"
           >
             <Calendar className="w-4 h-4 text-[#00f5a0]" />
             <span>Schedule Guided Enterprise Demo</span>

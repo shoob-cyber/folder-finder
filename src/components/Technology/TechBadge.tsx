@@ -43,8 +43,8 @@ export const TechBadge: React.FC<TechBadgeProps> = ({
       whileTap={{ scale: 0.97 }}
       className={`interactive-card spotlight-card relative text-left w-full p-5 rounded-xl border transition-all duration-300 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-[#00f5a0] ${
         isActive
-          ? "bg-[#12201a] border-[#00f5a0] shadow-[0_0_25px_rgba(0, 245, 160,0.35)]"
-          : "bg-[#0d1410]/80 border-[#164034] hover:border-[#00f5a0]/50 hover:bg-[#12201a]/80 hover:shadow-[0_0_20px_rgba(0, 245, 160,0.2)]"
+          ? "bg-[#12201a] border-[#00f5a0] shadow-[0_0_25px_rgba(0,245,160,0.35)]"
+          : "bg-[#0d1410]/80 border-[#164034] hover:border-[#00f5a0]/50 hover:bg-[#12201a]/80 hover:shadow-[0_0_20px_rgba(0,245,160,0.2)]"
       }`}
       aria-pressed={isActive}
     >

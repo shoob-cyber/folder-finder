@@ -183,7 +183,7 @@ export const Technology: React.FC = () => {
             </div>
 
             {/* Live Interactive Spec Card based on Selected Tech */}
-            <div className="p-5 rounded-xl bg-[#0d1410]/90 border border-[#00f5a0]/30 shadow-[0_0_25px_rgba(0, 245, 160,0.15)] relative overflow-hidden">
+            <div className="p-5 rounded-xl bg-[#0d1410]/90 border border-[#00f5a0]/30 shadow-[0_0_25px_rgba(0,245,160,0.15)] relative overflow-hidden">
               <div className="flex items-center justify-between border-b border-[#164034] pb-3 mb-3">
                 <div className="flex items-center gap-2">
                   <Terminal className="w-4 h-4 text-[#00f5a0]" />

@@ -40,7 +40,7 @@ export const CTAForm: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="p-6 rounded-2xl bg-[#0d1410] border border-[#00f5a0]/50 text-center shadow-[0_0_30px_rgba(0, 245, 160,0.3)]"
+          className="p-6 rounded-2xl bg-[#0d1410] border border-[#00f5a0]/50 text-center shadow-[0_0_30px_rgba(0,245,160,0.3)]"
         >
           <div className="w-12 h-12 rounded-full bg-[#00f5a0]/10 text-[#00f5a0] flex items-center justify-center mx-auto mb-3">
             <CheckCircle2 className="w-6 h-6" />
@@ -80,7 +80,7 @@ export const CTAForm: React.FC = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="absolute right-2 top-2 bottom-2 px-5 rounded-lg bg-[#00f5a0] hover:bg-[#00c47f] text-[#070b09] font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2 shadow-[0_0_15px_rgba(0, 245, 160,0.4)] hover:shadow-[0_0_25px_rgba(0, 245, 160,0.6)] transition-all duration-200 disabled:opacity-70 focus:outline-none focus:ring-2 focus:ring-white"
+              className="absolute right-2 top-2 bottom-2 px-5 rounded-lg bg-[#00f5a0] hover:bg-[#00c47f] text-[#070b09] font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2 shadow-[0_0_15px_rgba(0,245,160,0.4)] hover:shadow-[0_0_25px_rgba(0,245,160,0.6)] transition-all duration-200 disabled:opacity-70 focus:outline-none focus:ring-2 focus:ring-white"
             >
               {isSubmitting ? (
                 <>

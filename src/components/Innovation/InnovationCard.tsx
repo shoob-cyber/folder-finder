@@ -38,7 +38,7 @@ export const InnovationCard: React.FC<InnovationCardProps> = ({
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative flex flex-col justify-between bg-[#0d1410] rounded-2xl p-6 sm:p-8 border border-[#164034] shadow-[0_4px_16px_rgba(0,0,0,0.5)] hover:shadow-[0_16px_36px_rgba(0, 245, 160,0.14)] hover:border-[#00f5a0]/40 transition-all duration-300 transform hover:-translate-y-1.5"
+      className="group relative flex flex-col justify-between bg-[#0d1410] rounded-2xl p-6 sm:p-8 border border-[#164034] shadow-[0_4px_16px_rgba(0,0,0,0.5)] hover:shadow-[0_16px_36px_rgba(0,245,160,0.14)] hover:border-[#00f5a0]/40 transition-all duration-300 transform hover:-translate-y-1.5"
     >
       {/* Top Header & Tag */}
       <div>

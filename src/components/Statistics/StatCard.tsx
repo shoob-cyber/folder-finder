@@ -47,7 +47,7 @@ export const StatCard: React.FC<StatCardProps> = ({
       <div className="absolute inset-0 rounded-2xl bg-radial-gradient from-[#00f5a0]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
       {/* Large Glowing Number */}
-      <div className="text-4xl sm:text-5xl lg:text-6xl font-black font-mono text-[#00f5a0] tracking-tight mb-2 drop-shadow-[0_0_15px_rgba(0, 245, 160,0.4)] group-hover:drop-shadow-[0_0_25px_rgba(0, 245, 160,0.7)] transition-all duration-300">
+      <div className="text-4xl sm:text-5xl lg:text-6xl font-black font-mono text-[#00f5a0] tracking-tight mb-2 drop-shadow-[0_0_15px_rgba(0,245,160,0.4)] group-hover:drop-shadow-[0_0_25px_rgba(0,245,160,0.7)] transition-all duration-300">
         {displayValue}
       </div>
 
