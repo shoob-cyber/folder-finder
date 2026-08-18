@@ -103,7 +103,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="relative w-full max-w-2xl bg-[#0f1613] border border-[#1f302a] shadow-[0_0_50px_rgba(0,212,255,0.25)] rounded-2xl p-6 sm:p-8 overflow-hidden z-10 text-white"
+            className="relative w-full max-w-2xl bg-[#0f1613] border border-[#1f302a] shadow-[0_0_50px_rgba(45,212,168,0.25)] rounded-2xl p-6 sm:p-8 overflow-hidden z-10 text-white"
             role="dialog"
             aria-modal="true"
             aria-labelledby="demo-modal-title"
@@ -148,7 +148,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                     }}
                     className={`p-3 rounded-xl border text-left transition-all duration-200 ${
                       selectedFocus === opt.id
-                        ? "bg-[#16211c] border-[#2dd4a8] text-white shadow-[0_0_15px_rgba(0,212,255,0.25)]"
+                        ? "bg-[#16211c] border-[#2dd4a8] text-white shadow-[0_0_15px_rgba(45,212,168,0.25)]"
                         : "bg-[#0a0c0f]/60 border-[#1f302a] text-[#8a9a93] hover:border-white/20 hover:text-white"
                     }`}
                   >

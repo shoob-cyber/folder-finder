@@ -28,7 +28,7 @@ export const TimelineStep: React.FC<TimelineStepProps> = ({
         onClick={onSelect}
         className={`relative z-10 flex items-center justify-center w-16 h-16 rounded-2xl border-2 transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-[#2dd4a8] ${
           isActive
-            ? "bg-[#0a0c0f] border-[#2dd4a8] text-[#2dd4a8] shadow-[0_0_25px_rgba(0,212,255,0.4)] scale-110"
+            ? "bg-[#0a0c0f] border-[#2dd4a8] text-[#2dd4a8] shadow-[0_0_25px_rgba(45,212,168,0.4)] scale-110"
             : "bg-[#0f1613] border-[#1f302a] text-[#ffffff] group-hover:border-[#2dd4a8]/60 group-hover:shadow-[0_8px_20px_rgba(45,212,168,0.12)] group-hover:scale-105"
         }`}
         aria-label={`Step ${stepNumber}: ${title}`}

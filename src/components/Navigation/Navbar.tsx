@@ -42,7 +42,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
             className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#2dd4a8] rounded-lg px-1 py-0.5"
             aria-label="Nexus Biotech Home"
           >
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-[#2dd4a8]/20 to-[#73ffb8]/20 border border-[#2dd4a8]/40 group-hover:border-[#2dd4a8] transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(0,212,255,0.4)]">
+            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-[#2dd4a8]/20 to-[#73ffb8]/20 border border-[#2dd4a8]/40 group-hover:border-[#2dd4a8] transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(45,212,168,0.4)]">
               <Dna className="w-5 h-5 text-[#2dd4a8] group-hover:rotate-180 transition-transform duration-700 ease-out" />
               <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#2dd4a8] rounded-full animate-ping opacity-75" />
               <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#2dd4a8] rounded-full" />
@@ -76,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
             </button>
             <a
               href="#cta"
-              className="relative inline-flex items-center gap-2 px-5 py-2 text-xs font-bold uppercase tracking-wider text-[#0a0c0f] bg-[#2dd4a8] hover:bg-[#1fae8b] rounded-xl shadow-[0_0_20px_rgba(0,212,255,0.35)] hover:shadow-[0_0_30px_rgba(0,212,255,0.6)] transition-all duration-200 hover:scale-[1.03] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-white"
+              className="relative inline-flex items-center gap-2 px-5 py-2 text-xs font-bold uppercase tracking-wider text-[#0a0c0f] bg-[#2dd4a8] hover:bg-[#1fae8b] rounded-xl shadow-[0_0_20px_rgba(45,212,168,0.35)] hover:shadow-[0_0_30px_rgba(45,212,168,0.6)] transition-all duration-200 hover:scale-[1.03] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-white"
             >
               <Sparkles className="w-3.5 h-3.5" />
               <span>Start Building</span>
