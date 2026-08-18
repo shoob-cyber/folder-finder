@@ -228,7 +228,7 @@ function BioParticles({ count = 120 }) {
     const array = posAttr.array as Float32Array;
 
     for (let i = 0; i < count; i++) {
-      array[i * 3 + 1] += velocities[i]!;
+      array[i * 3 + 1] = array[i * 3 + 1]! + velocities[i]!;
       // Reset if particle moves past top
       if (array[i * 3 + 1]! > 5) {
         array[i * 3 + 1] = -5;
