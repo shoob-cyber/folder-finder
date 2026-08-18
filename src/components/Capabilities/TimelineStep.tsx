@@ -29,7 +29,7 @@ export const TimelineStep: React.FC<TimelineStepProps> = ({
         className={`relative z-10 flex items-center justify-center w-16 h-16 rounded-2xl border-2 transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-[#2dd4a8] ${
           isActive
             ? "bg-[#0a0c0f] border-[#2dd4a8] text-[#2dd4a8] shadow-[0_0_25px_rgba(0,212,255,0.4)] scale-110"
-            : "bg-white border-[#e0e7ff] text-[#1a1a2e] group-hover:border-[#2dd4a8]/60 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.08)] group-hover:scale-105"
+            : "bg-[#0f1613] border-[#1f302a] text-[#ffffff] group-hover:border-[#2dd4a8]/60 group-hover:shadow-[0_8px_20px_rgba(45,212,168,0.12)] group-hover:scale-105"
         }`}
         aria-label={`Step ${stepNumber}: ${title}`}
       >
@@ -40,7 +40,7 @@ export const TimelineStep: React.FC<TimelineStepProps> = ({
           className={`absolute -top-2 -right-2 w-6 h-6 rounded-full text-[11px] font-mono font-bold flex items-center justify-center border ${
             isActive
               ? "bg-[#2dd4a8] text-[#0a0c0f] border-white"
-              : "bg-[#0a0c0f] text-white border-[#e0e7ff]"
+              : "bg-[#0a0c0f] text-white border-[#1f302a]"
           }`}
         >
           0{stepNumber}
@@ -51,13 +51,13 @@ export const TimelineStep: React.FC<TimelineStepProps> = ({
       <div
         onClick={onSelect}
         className={`mt-6 p-4 rounded-xl transition-all duration-300 cursor-pointer w-full ${
-          isActive ? "bg-white shadow-[0_8px_24px_rgba(0,0,0,0.08)] border border-[#2dd4a8]/40" : "hover:bg-white/60"
+          isActive ? "bg-[#0f1613] shadow-[0_8px_24px_rgba(45,212,168,0.12)] border border-[#2dd4a8]/40" : "hover:bg-white/60"
         }`}
       >
-        <h3 className="text-lg sm:text-xl font-bold text-[#1a1a2e] mb-2 group-hover:text-[#2dd4a8] transition-colors">
+        <h3 className="text-lg sm:text-xl font-bold text-[#ffffff] mb-2 group-hover:text-[#2dd4a8] transition-colors">
           {title}
         </h3>
-        <p className="text-sm text-[#6b7280] leading-relaxed mb-3">
+        <p className="text-sm text-[#9bb0a7] leading-relaxed mb-3">
           {description}
         </p>
 

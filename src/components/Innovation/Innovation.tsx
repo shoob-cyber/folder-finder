@@ -37,7 +37,7 @@ export const Innovation: React.FC = () => {
   return (
     <section
       id="innovation"
-      className="relative w-full bg-[#f8f9fa] py-24 sm:py-32 overflow-hidden"
+      className="relative w-full bg-[#0b100e] py-24 sm:py-32 overflow-hidden"
       aria-label="Innovation Pillars Section"
     >
       {/* Decorative subtle background accents */}
@@ -53,7 +53,7 @@ export const Innovation: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e8ecff] text-[#0a0c0f] text-xs font-mono font-bold tracking-wider uppercase mb-4"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1f302a] text-[#0a0c0f] text-xs font-mono font-bold tracking-wider uppercase mb-4"
           >
             <Sparkles className="w-3.5 h-3.5 text-[#2dd4a8]" />
             Core Capabilities
@@ -64,7 +64,7 @@ export const Innovation: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1a1a2e] tracking-tight mb-6"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#ffffff] tracking-tight mb-6"
           >
             Three Pillars of Innovation
           </motion.h2>
@@ -74,7 +74,7 @@ export const Innovation: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg text-[#6b7280] leading-relaxed"
+            className="text-base sm:text-lg text-[#9bb0a7] leading-relaxed"
           >
             Designed by computational biologists and AI researchers to remove bottlenecks at every tier of preclinical exploration.
           </motion.p>
