@@ -142,3 +142,249 @@
     color: var(--color-foreground);
   }
 }
+
+/* ===========================================================
+   Nexus Biotech landing page — imported design tokens & styles
+   =========================================================== */
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Space Mono", "Courier New", monospace;
+
+  --color-dark-bg: #0a0e27;
+  --color-dark-card: #0f153a;
+  --color-dark-elevated: #141c4d;
+  --color-dark-border: #1a2847;
+  --color-light-bg: #f8f9fa;
+  --color-light-card: #ffffff;
+  --color-light-elevated: #f0f3f8;
+  --color-light-border: #e8ecff;
+  --color-accent-cyan: #00d4ff;
+  --color-accent-cyan-hover: #00b8e0;
+  --color-accent-violet: #9d4edd;
+  --color-accent-orange: #ff6b35;
+
+  --shadow-cyan-glow: 0 0 25px rgba(0, 212, 255, 0.35);
+  --shadow-cyan-glow-lg: 0 0 45px rgba(0, 212, 255, 0.5);
+  --shadow-violet-glow: 0 0 25px rgba(157, 78, 221, 0.35);
+  --shadow-card-light: 0 4px 20px rgba(0, 0, 0, 0.06);
+  --shadow-card-light-hover: 0 12px 32px rgba(0, 0, 0, 0.12);
+  --shadow-card-dark: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-card-dark-hover: 0 12px 32px rgba(0, 212, 255, 0.15);
+
+  --breakpoint-xs: 375px;
+  --breakpoint-2xl: 1440px;
+
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-shimmer: shimmer 2.5s infinite;
+}
+
+:root {
+  /* Primary */
+  --dark-bg: #0a0e27;
+  --dark-card: #0f153a;
+  --dark-card-hover: #141c4d;
+  --light-bg: #f8f9fa;
+  --light-card: #ffffff;
+  --accent-cyan: #00d4ff;
+  --accent-cyan-hover: #00b4d8;
+  --accent-violet: #9d4edd;
+  --accent-orange: #ff6b35;
+
+  /* Secondary */
+  --text-primary: #ffffff;
+  --text-secondary: #1a1a2e;
+  --text-muted: #888899;
+  --border-light: #e8ecff;
+  --border-dark: #1a2847;
+
+  /* Glass/Overlay */
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-dark-bg: rgba(10, 14, 39, 0.75);
+  --glass-dark-border: rgba(0, 212, 255, 0.15);
+
+  /* Typography scale */
+  --h1: 4.5rem;
+  --h2: 3.5rem;
+  --h3: 2.5rem;
+  --body: 1.125rem;
+  --small: 0.875rem;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2), inset 0 0 15px rgba(0, 212, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(0, 212, 255, 0.45), inset 0 0 25px rgba(0, 212, 255, 0.2);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes gridDrift {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 40px; }
+}
+
+@keyframes spin360 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes laserSweep {
+  0% { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(250%) skewX(-15deg); }
+}
+
+@keyframes borderGlowLoop {
+  0%, 100% { border-color: rgba(0, 212, 255, 0.3); }
+  50% { border-color: rgba(157, 78, 221, 0.5); }
+}
+
+@utility animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@utility animate-float-gentle {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+@utility animate-border-glow {
+  animation: borderGlowLoop 3s ease-in-out infinite;
+}
+
+@utility tech-grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(0, 212, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@utility tech-grid-subtle {
+  background-image:
+    linear-gradient(to right, rgba(26, 40, 71, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(26, 40, 71, 0.4) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@utility shimmer-btn {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      60deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.15) 30%,
+      rgba(255, 255, 255, 0.25) 35%,
+      transparent 45%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+
+  &:hover::after {
+    transform: translateX(100%);
+  }
+}
+
+@utility glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@utility glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(0, 212, 255, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 212, 255, 0.12);
+  }
+}
+
+@utility glass-nav {
+  background: rgba(10, 14, 39, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(26, 40, 71, 0.8);
+}
+
+@utility text-gradient-cyan {
+  background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility text-gradient-biotech {
+  background: linear-gradient(135deg, #00d4ff 0%, #9d4edd 50%, #ff6b35 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility text-gradient-light-heading {
+  background: linear-gradient(135deg, #0a0e27 0%, #1a2847 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0a0e27; }
+::-webkit-scrollbar-thumb { background: #1a2847; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #00d4ff; }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
