@@ -23,13 +23,14 @@ export const HeroText: React.FC<HeroTextProps> = ({ onOpenDemo }) => {
   };
 
   const letterVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 28, filter: "blur(10px)" },
     visible: {
       opacity: 1,
       y: 0,
+      filter: "blur(0px)",
       transition: {
-        duration: 0.5,
-        ease: "easeOut",
+        duration: 0.7,
+        ease: [0.16, 1, 0.3, 1],
       },
     },
   };
@@ -47,8 +48,8 @@ export const HeroText: React.FC<HeroTextProps> = ({ onOpenDemo }) => {
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2dd4a8] opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2dd4a8]"></span>
         </span>
-        <span className="font-mono text-xs uppercase tracking-widest text-[#2dd4a8] font-semibold">
-          AI-Driven Cellular Intelligence v4.2
+        <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#2dd4a8] font-semibold">
+          Cellular Intelligence Platform · Release 4.2
         </span>
       </motion.div>
 
@@ -57,27 +58,27 @@ export const HeroText: React.FC<HeroTextProps> = ({ onOpenDemo }) => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.08] mb-6"
+        className="font-display text-[2.75rem] sm:text-6xl lg:text-[4.25rem] font-extrabold tracking-[-0.035em] text-white leading-[1.03] mb-6"
       >
         <span className="block">
-          {headlineLine1.split("").map((char, index) => (
+          {headlineLine1.split(" ").map((word, index) => (
             <motion.span
               key={`line1-${index}`}
               variants={letterVariants}
-              className="inline-block"
+              className="inline-block mr-[0.28em]"
             >
-              {char === " " ? "\u00A0" : char}
+              {word}
             </motion.span>
           ))}
         </span>
-        <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-[#2dd4a8] via-[#73ffb8] to-[#d9f99d]">
-          {headlineLine2.split("").map((char, index) => (
+        <span className="block mt-1 text-gradient-bio">
+          {headlineLine2.split(" ").map((word, index) => (
             <motion.span
               key={`line2-${index}`}
               variants={letterVariants}
-              className="inline-block"
+              className="inline-block mr-[0.28em]"
             >
-              {char === " " ? "\u00A0" : char}
+              {word}
             </motion.span>
           ))}
         </span>
@@ -88,9 +89,11 @@ export const HeroText: React.FC<HeroTextProps> = ({ onOpenDemo }) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className="text-base sm:text-lg lg:text-xl text-[#8a9a93] font-normal leading-relaxed mb-8 max-w-xl"
+        className="text-base sm:text-lg text-[#9bb0a7] font-normal leading-relaxed mb-9 max-w-xl"
       >
-        Precision medicine platform powered by AI-driven cellular analysis. Accelerate your biotech breakthroughs from early discovery to clinical validation in record time.
+        Nexus Biotech unifies high-resolution cellular imaging, multi-omics and
+        predictive modelling in one validated environment — so translational teams
+        move from discovery to clinical evidence with fewer dead ends.
       </motion.p>
 
       {/* CTA Buttons */}
@@ -102,9 +105,9 @@ export const HeroText: React.FC<HeroTextProps> = ({ onOpenDemo }) => {
       >
         <a
           href="#cta"
-          className="shimmer-btn inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-sm sm:text-base text-[#0a0c0f] bg-[#2dd4a8] hover:bg-[#1fae8b] shadow-[0_0_25px_rgba(45,212,168,0.45)] hover:shadow-[0_0_35px_rgba(45,212,168,0.7)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white"
+          className="btn-bio inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-white/70"
         >
-          <span>Start Building</span>
+          <span>Request Platform Access</span>
           <ArrowRight className="w-4 h-4" />
         </a>
 
@@ -113,7 +116,7 @@ export const HeroText: React.FC<HeroTextProps> = ({ onOpenDemo }) => {
           className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base text-white/90 bg-white/5 hover:bg-white/10 border border-white/15 hover:border-[#2dd4a8]/60 hover:text-[#2dd4a8] backdrop-blur-md transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#2dd4a8]"
         >
           <Play className="w-4 h-4 text-[#2dd4a8] fill-[#2dd4a8]/20" />
-          <span>Interactive Demo</span>
+          <span>Watch the Platform Tour</span>
         </button>
       </motion.div>
 
