@@ -78,7 +78,15 @@ export const Pillars: React.FC = () => {
               invalidateOnRefresh: true,
             },
           });
+          const refresh = () => ScrollTrigger.refresh();
+          const t1 = window.setTimeout(refresh, 600);
+          const t2 = window.setTimeout(refresh, 2000);
+          window.addEventListener("load", refresh);
+
           cleanup = () => {
+            window.clearTimeout(t1);
+            window.clearTimeout(t2);
+            window.removeEventListener("load", refresh);
             tween.scrollTrigger?.kill();
             tween.kill();
           };
@@ -125,6 +133,7 @@ export const Pillars: React.FC = () => {
         <div className="overflow-hidden">
           <div
             ref={trackRef}
+            data-pillars-track
             className="flex flex-col lg:flex-row gap-6 lg:gap-10 px-4 sm:px-6 lg:px-8 lg:w-max lg:will-change-transform"
           >
             {pillars.map((p, i) => (
