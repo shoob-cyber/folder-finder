@@ -2,7 +2,7 @@
 
 > A cinematic, high-performance landing page for a precision medicine / cellular intelligence platform.
 
-**Live preview:** [id-preview--1d834d17-a25c-4e5c-abd1-d73c96eb9ec2.lovable.app](https://id-preview--1d834d17-a25c-4e5c-abd1-d73c96eb9ec2.lovable.app)
+**Live preview:** [https://folder-finder.vercel.app/](https://folder-finder.vercel.app/))
 
 ---
 
